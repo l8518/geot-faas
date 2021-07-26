@@ -15,7 +15,7 @@
     "showAsList": [],
     "showAsSum": ["newcontainer"],
 
-    "ignoreFromAll": ["zAll", "lang", "version", "linuxVersion", "platform", "hostname"],
+    "ignoreFromAll": ["zAll"],
     "ignoreFromGroups": ["1_run_id", "2_thread_id", "cpuModel", "cpuIdle", "cpuIowait", "cpuIrq", "cpuKrn", "cpuNice", "cpuSoftIrq", "cpuUsr"],
     "ignoreByGroup": {
 		"containerID": ["containerID"],
