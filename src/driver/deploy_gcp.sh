@@ -29,7 +29,7 @@ docker push $REGION-docker.pkg.dev/$GCP_PROJECT_ID/$ID_CORE/workloadgenerator:LA
 echo $GCP_ENDPOINT
 gcloud run deploy $ID --image $REGION-docker.pkg.dev/$GCP_PROJECT_ID/$ID_CORE/workloadgenerator:LATEST \
                       --timeout=3600 \
-                      --memory=2Gi \
+                      --memory=4Gi \
                       --cpu=2 \
                       --port=$PORT --region=$REGION --quiet \
                       --set-env-vars=WORKLOADGENERATOR_PROVIDER=GCP,WORKLOADGENERATOR_REGION=$REGION,SAAF_ENDPOINT=$GCP_ENDPOINT,AZURE_STORAGE_CONNECTION_STRING=$AZURE_STORAGE_CONNECTION_STRING,WORKLOADGENERATOR_UPLOAD_ARTIFACTS=TRUE
