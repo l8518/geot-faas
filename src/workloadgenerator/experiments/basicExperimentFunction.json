@@ -1,0 +1,5 @@
+{
+	"function": "saafdemo",
+    "platform": "HTTP",
+    "source": "../python_template"
+}

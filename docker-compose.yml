@@ -1,0 +1,18 @@
+version: "2"
+services:
+  driver:
+    build:
+      context: src/driver
+    volumes:
+      - .volumes/azure/:/root/.azure
+      - .volumes/aws/:/root/.aws/
+      - .volumes/gcp/:/root/.config/gcloud
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+        - EXPERIMENT_ENV
+  workloadgenerator:
+    build:
+      context: src/workloadgenerator
+    volumes:
+      - .volumes/azure/:/root/.azure
+      - .volumes/aws/:/root/.aws/

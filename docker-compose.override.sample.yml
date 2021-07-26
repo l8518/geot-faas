@@ -1,0 +1,8 @@
+version: "2"
+services:
+  driver:
+    volumes:
+      - ./src/driver/:/scripts
+  workloadgenerator:
+    volumes:
+      - ./src/workloadgenerator/:/app

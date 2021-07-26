@@ -1,0 +1,111 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "_generator": {
+            "name": "bicep",
+            "version": "0.4.1.14562",
+            "templateHash": "12367894147709986470"
+        }
+    },
+    "parameters": {
+        "name": {
+            "type": "string",
+            "defaultValue": "workloadgenerator",
+            "metadata": {
+                "description": "Name for the container group"
+            }
+        },
+        "image": {
+            "type": "string"
+        },
+        "restartPolicy": {
+            "type": "string",
+            "defaultValue": "Never",
+            "allowedValues": [
+                "Never"
+            ],
+            "metadata": {
+                "description": "The behavior of Azure runtime if container has stopped."
+            }
+        },
+        "logAnalyticsRG": {
+            "type": "string"
+        },
+        "logAnalyticsName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Location for all resources."
+            }
+        },
+        "envSaafEnpoint": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string"
+        },
+        "storageAccountRG": {
+            "type": "string"
+        }
+    },
+    "functions": [],
+    "resources": [
+        {
+            "type": "Microsoft.ContainerInstance/containerGroups",
+            "apiVersion": "2019-12-01",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "containers": [
+                    {
+                        "name": "[parameters('name')]",
+                        "properties": {
+                            "image": "[parameters('image')]",
+                            "environmentVariables": [
+                                {
+                                    "name": "WORKLOADGENERATOR_UPLOAD_ARTIFACTS",
+                                    "value": "TRUE"
+                                },
+                                {
+                                    "name": "WORKLOADGENERATOR_REGION",
+                                    "value": "[parameters('location')]"
+                                },
+                                {
+                                    "name": "WORKLOADGENERATOR_PROVIDER",
+                                    "value": "AZURE"
+                                },
+                                {
+                                    "name": "AZURE_STORAGE_CONNECTION_STRING",
+                                    "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', parameters('storageAccountName'), ';AccountKey=', listKeys(resourceId(parameters('storageAccountRG'),'Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-04-01').keys[0].value,';EndpointSuffix=core.windows.net')]"
+                                },
+                                {
+                                    "name": "SAAF_ENDPOINT",
+                                    "value": "[parameters('envSaafEnpoint')]"
+                                }
+                            ],
+                            "resources": {
+                                "requests": {
+                                    "cpu": 1,
+                                    "memoryInGB": 1.5
+                                }
+                            }
+                        }
+                    }
+                ],
+                "osType": "Linux",
+                "restartPolicy": "[parameters('restartPolicy')]",
+                "diagnostics": {
+                    "logAnalytics": {
+                        "workspaceId": "[reference(resourceId(parameters('logAnalyticsRG'), 'Microsoft.OperationalInsights/workspaces/', parameters('logAnalyticsName')), '2015-03-20').customerId]",
+                        "workspaceKey": "[listKeys(resourceId(parameters('logAnalyticsRG'), 'Microsoft.OperationalInsights/workspaces/', parameters('logAnalyticsName')), '2015-03-20').primarySharedKey]",
+                        "logType": "ContainerInstanceLogs"
+                    }
+                }
+            }
+        }
+    ]
+}

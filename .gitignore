@@ -1,0 +1,13 @@
+SAAF
+.volumes/*
+src/logpull/runs
+**/.env
+.vscode
+src/driver/*_saaf_config.json
+src/workloadgenerator/runs
+src/workloadgenerator/upload
+data
+*.key
+*.key.pub
+docker-compose.override.yml
+**/nohup.out
