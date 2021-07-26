@@ -112,7 +112,7 @@ Resources:
       RequiresCompatibilities:
         - FARGATE
       Cpu: 2048
-      Memory: 2GB
+      Memory: 2048
       ExecutionRoleArn: !Ref ExecutionRole
       TaskRoleArn: !Ref TaskRole
       ContainerDefinitions:
