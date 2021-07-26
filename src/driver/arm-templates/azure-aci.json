@@ -89,8 +89,8 @@
                             ],
                             "resources": {
                                 "requests": {
-                                    "cpu": 1,
-                                    "memoryInGB": 1.5
+                                    "cpu": 2,
+                                    "memoryInGB": 2
                                 }
                             }
                         }
