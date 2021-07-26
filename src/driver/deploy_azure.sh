@@ -27,6 +27,7 @@ fi
 
 az deployment group create --name ACIDeployment --resource-group $RESOURCE_GROUP \
                            --template-file arm-templates/azure-aci.json \
+                           --no-wait \
                            --parameters name=$ACI_NAME \
                                         image=$IMAGE \
                                         logAnalyticsRG=$ID_CORE \
