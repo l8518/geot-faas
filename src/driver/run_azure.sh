@@ -9,7 +9,7 @@ ACI_PROV_STATUS=$(az container list --query "[?resourceGroup=='$RESOURCE_GROUP' 
 echo $ACI_PROV_STATUS
 if [ $ACI_PROV_STATUS = '"Succeeded"' ]; then
     echo "ACI Run Workload"
-    az container start -g $RESOURCE_GROUP -n $ACI_NAME
+    az container start -g $RESOURCE_GROUP -n $ACI_NAME --no-wait
 else
     echo "Something went wrong here"
 fi
