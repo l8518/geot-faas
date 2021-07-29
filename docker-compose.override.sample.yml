@@ -1,8 +1,12 @@
 version: "2"
 services:
   driver:
+    build:
+      context: src/driver
     volumes:
       - ./src/driver/:/scripts
   workloadgenerator:
+    build:
+      context: src/workloadgenerator
     volumes:
       - ./src/workloadgenerator/:/app

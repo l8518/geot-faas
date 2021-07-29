@@ -1,8 +1,7 @@
 version: "2"
 services:
   driver:
-    build:
-      context: src/driver
+    image: ghcr.io/l8518/geot-faas-driver:latest
     volumes:
       - .volumes/azure/:/root/.azure
       - .volumes/aws/:/root/.aws/
@@ -11,8 +10,7 @@ services:
     environment:
         - EXPERIMENT_ENV
   workloadgenerator:
-    build:
-      context: src/workloadgenerator
+    image: ghcr.io/l8518/geot-faas-wrklg:latest 
     volumes:
       - .volumes/azure/:/root/.azure
       - .volumes/aws/:/root/.aws/
