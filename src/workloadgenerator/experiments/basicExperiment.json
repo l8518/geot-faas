@@ -4,9 +4,9 @@
     "memorySettings": [],
     "payloads": [{}],
 
-    "runs": 200,
+    "runs": 1,
     "threads": 1,
-    "iterations": 2,
+    "iterations": 1,
     "sleepTime": 5,
     "randomSeed": 42,
 
