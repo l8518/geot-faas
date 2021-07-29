@@ -62,17 +62,23 @@ signature=$(printf  "$string_to_sign" | openssl dgst -sha256 -mac HMAC -macopt "
 authorization_header="Authorization: $authorization $AZURE_STORAGE_ACCOUNT:$signature"
 OUTPUT_FILE="https://${AZURE_STORAGE_ACCOUNT}.blob.core.windows.net/${AZURE_CONTAINER_NAME}/${BLOB_NAME}"
 
-curl -X ${HTTP_METHOD} \
+HTTP_CODE=$(curl  \
+    --write-out "%{http_code}\n" --silent \
+    --output upload.log \
+    -X ${HTTP_METHOD} \
     -T ${FILENAME} \
     -H "$x_ms_date_h" \
     -H "$x_ms_version_h" \
     -H "$x_ms_blob_type_h" \
     -H "$authorization_header" \
     -H "Content-Type: ${FILE_TYPE}" \
-    ${OUTPUT_FILE}
+    ${OUTPUT_FILE})
 
-if [ $? -eq 0 ]; then
+if [ $HTTP_CODE -eq 201 ]; then
     echo ${OUTPUT_FILE}
     exit 0;
 fi;
+
+cat upload.log
+echo 
 exit 1
