@@ -17,10 +17,8 @@ def measure(provider, region):
     id = f"{env}{region}" 
 
     result = None
-    if provider in ["azure", "aws"]:
+    if provider in ["azure", "aws", "gcp"]:
        result = subprocess.run([f"/scripts/run_{provider}.sh", id, region], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    elif provider == "gcp":
-        print("not implemented yet")
     else:
         raise Exception("Unknown provider!")
 
