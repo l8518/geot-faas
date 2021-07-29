@@ -24,7 +24,7 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # Install SAAF
-COPY --from=build /app/SAAF ./
+COPY --from=build /app/SAAF ./SAAF
 
 # Add remaning sources
 COPY . .
