@@ -6,14 +6,14 @@ ENV LSB_RELEASE=bionic
 
 # Add Base Dependencies
 RUN apt update && apt -y install cron jq git unzip zip ca-certificates curl apt-transport-https gnupg && \
-    apt autoremove --purge && apt clean
+    rm -rf /var/lib/apt/lists/*
 
 # Add Docker CLI
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && \
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $LSB_RELEASE stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null && \
     apt update && apt -y install docker-ce-cli && \
-    apt autoremove --purge && apt clean
+    rm -rf /var/lib/apt/lists/*
 
 # Add AWS, Azure and GCP clis
 RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
@@ -25,7 +25,7 @@ RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor |
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
     apt-get update && apt-get install -y azure-cli=2.25.0-1~bionic azure-functions-core-tools-3=3.0.3568-1 google-cloud-sdk=347.0.0-0 && \
     rm -rf awscliv2.zip ./aws && \
-    apt autoremove --purge && apt clean
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /scripts
 

@@ -17,7 +17,9 @@ ENV PYTHONUNBUFFERED=TRUE
 
 WORKDIR /app
 
-RUN apt update && apt install -y file curl xxd
+RUN apt update && \
+    apt install -y file curl xxd && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Python Dependencies
 COPY requirements.txt requirements.txt
