@@ -15,9 +15,7 @@ if [ ${WORKLOADGENERATOR_UPLOAD_ARTIFACTS^^} = 'TRUE' ]; then
     mkdir -p upload
     tar -zcf "upload/$EXPERIMENT_NAME.tar.gz" -C runs .
     ./upload.sh "upload/$EXPERIMENT_NAME.tar.gz" "$EXPERIMENT_NAME.tar.gz"
-    UPLOAD_SUCCESS=$?
-    echo $UPLOAD_SUCCESS
-    if [ $UPLOAD_SUCCESS -eq 0 ]; then
+    if [ $? -eq 0 ]; then
         echo "OK: TAR UPLOADED"
     else
         echo "ERROR: TAR FAILED TO UPLOAD!"
