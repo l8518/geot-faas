@@ -2,24 +2,32 @@
 	"experiment": {
 		"name": "geotbench"
 	},
-	"azure": {
-		"regions": [
-			"westeurope",
-			"westus"
-		]
-	},
-	"aws": {
-		"regions": [
-			"eu-west-1",
-			"us-east-1"
-		]
-	},
-	"gcp": {
-		"regions": [
-			"europe-west1",
-			"us-west2"
-		]
-	},
+	"experiment-provider-locations": [
+		{
+			"provider": "azure",
+			"region": "westus"
+		},
+		{
+			"provider": "azure",
+			"region": "westeurope"
+		},
+		{
+			"provider": "aws",
+			"region": "eu-west-1"
+		},
+		{
+			"provider": "aws",
+			"region": "us-east-1"
+		},
+		{
+			"provider": "gcp",
+			"region": "europe-west1"
+		},
+		{
+			"provider": "gcp",
+			"region": "us-west2"
+		}
+	],
 	"saaf-config": {
 		"functionName": "<replaced by setup script>",
 		"lambdaHandler": "index.handler",

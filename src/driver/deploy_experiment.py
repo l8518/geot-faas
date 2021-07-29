@@ -59,32 +59,34 @@ env = get_experiment_name()
 id_core = f"{env}core"
 deploy_core(id_core) # create resources group and arn for saaf
 
-for region in config['azure']['regions']:
-    print('deploying azure region', region)
-    id = f"{env}{region}"    
-    deploy_saaf_azure(id, region)
-    deploy_azure(id_core, id, region)
 
-for region in config['aws']['regions']:
-    id = f"{env}{region}"  
-    
-    subprocess.call([f'./predeploy_aws.sh', id_core, id, region])
+for pr in config['experiment-provider-locations']:
 
-    # TODO: maybe change to boto3
-    completed_call = subprocess.check_output(["aws", "iam", "get-role", "--role-name", f"{id}", "--region", f"{region}", "--query", "Role.Arn"])
-    arn = json.loads((completed_call.decode('utf8')))
-
-    print('aws arn', arn, 'for', region)
-
-    config['saaf-config']['lambdaRoleARN'] = arn
-
-    print('deploying aws region', region)
-      
-    deploy_saaf_aws(id, region)
-    deploy_aws(id_core, id, region)
-
-for region in config['gcp']['regions']:
+    provider = pr['provider']
+    region = pr['region']
     id = f"{env}{region}" 
-    print('deploy to gcp')
-    deploy_saaf_gcp(id, region)
-    deploy_gcp(id_core, id, region)
+    
+    print(f"deploying {provider} in {region}")
+
+    if provider == "azure": 
+        deploy_saaf_azure(id, region)
+        deploy_azure(id_core, id, region)
+
+    elif provider == "aws":
+        subprocess.call([f'./predeploy_aws.sh', id_core, id, region])
+
+        # TODO: maybe change to boto3
+        completed_call = subprocess.check_output(["aws", "iam", "get-role", "--role-name", f"{id}", "--region", f"{region}", "--query", "Role.Arn"])
+        arn = json.loads((completed_call.decode('utf8')))
+
+        config['saaf-config']['lambdaRoleARN'] = arn
+
+        deploy_saaf_aws(id, region)
+        deploy_aws(id_core, id, region)
+
+    elif  provider == "gcp":
+        deploy_saaf_gcp(id, region)
+        deploy_gcp(id_core, id, region)
+
+    else:
+        print("not implemented")
