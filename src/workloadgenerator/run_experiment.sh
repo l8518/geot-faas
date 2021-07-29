@@ -8,10 +8,10 @@ EXPERIMENT="../../experiments/basicExperiment.json"
 EXPERIMENT_OUT="../../runs/"
 
 pushd SAAF/test
-./faas_runner.py -f $FUNCTION -e $EXPERIMENT -o $EXPERIMENT_OUT
+# ./faas_runner.py -f $FUNCTION -e $EXPERIMENT -o $EXPERIMENT_OUT
 popd
 if [ ${WORKLOADGENERATOR_UPLOAD_ARTIFACTS^^} = 'TRUE' ]; then
     mkdir -p upload
     tar -zcvf "upload/$EXPERIMENT_NAME.tar.gz" -C runs .
-    python upload.py
+    sh ./upload.sh "upload/$EXPERIMENT_NAME.tar.gz" "$EXPERIMENT_NAME.tar.gz"
 fi

@@ -11,3 +11,4 @@ data
 *.key.pub
 docker-compose.override.yml
 **/nohup.out
+**/__pycache__
