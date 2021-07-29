@@ -75,7 +75,7 @@ HTTP_CODE=$(curl  \
     ${OUTPUT_FILE})
 
 if [ $HTTP_CODE -eq 201 ]; then
-    echo ${OUTPUT_FILE}
+    # echo ${OUTPUT_FILE}
     exit 0;
 fi;
 
