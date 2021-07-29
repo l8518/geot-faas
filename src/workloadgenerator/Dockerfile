@@ -23,8 +23,8 @@ RUN apt update && apt install -y file curl xxd
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-# Install SAAF
-COPY --from=build /app/SAAF ./SAAF
+# Only Use SAAF Runner
+COPY --from=build /app/SAAF/test ./SAAF/test
 
 # Add remaning sources
 COPY . .
