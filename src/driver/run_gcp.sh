@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INVOCATION_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_START=$(date +%Y%m%dT%H%M%S%3N)
 REGION=${2:-"europe-west1"}
 ID=${1}
 
@@ -13,15 +13,15 @@ echo "ID:                          $ID"
 echo "====Gcp Stats====" 
 echo "====================" 
 
-INVOCATION_ENDPOINT_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_ENDPOINT_START=$(date +%Y%m%dT%H%M%S%3N)
 ENDPOINT=$(gcloud run services describe $ID --region=$REGION --format=json | jq -r ".status.url")
-INVOCATION_ENDPOINT_END=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_ENDPOINT_END=$(date +%Y%m%dT%H%M%S%3N)
 
-INVOCATION_BEARER_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_BEARER_START=$(date +%Y%m%dT%H%M%S%3N)
 BEARER_TOKEN=$(gcloud auth print-identity-token)
-INVOCATION_BEARER_END=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_BEARER_END=$(date +%Y%m%dT%H%M%S%3N)
 
-INVOCATION_CURL_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_CURL_START=$(date +%Y%m%dT%H%M%S%3N)
 CURL_HTTP_CODE=$(curl \
     --write-out "%{http_code}\n" --silent \
     --output upload.log \
@@ -33,7 +33,7 @@ CURL_HTTP_CODE=$(curl \
     $ENDPOINT
    )
 
-INVOCATION_CURL_END=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_CURL_END=$(date +%Y%m%dT%H%M%S%3N)
 
 echo "====================" 
 echo "Finished Workloadgenerator "

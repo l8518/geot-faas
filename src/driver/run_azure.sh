@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INVOCATION_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_START=$(date +%Y%m%dT%H%M%S%3N)
 
 REGION=${2:-"westeurope"}
 ID=${1}
@@ -18,10 +18,10 @@ echo "ACI_NAME:                    $ACI_NAME"
 echo "RESOURCE_GROUP:              $RESOURCE_GROUP"
 echo "====================" 
 
-INVOCATION_ACI_START=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_ACI_START=$(date +%Y%m%dT%H%M%S%3N)
 az container start -g $RESOURCE_GROUP -n $ACI_NAME
 ACI_RET=$?
-INVOCATION_ACI_END=$(date +%Y%m%dT%H%M%SZ)
+INVOCATION_ACI_END=$(date +%Y%m%dT%H%M%S%3N)
 
 echo "====================" 
 echo "Finished Workloadgenerator "
