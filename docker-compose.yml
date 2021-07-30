@@ -6,6 +6,7 @@ services:
       - .volumes/azure/:/root/.azure
       - .volumes/aws/:/root/.aws/
       - .volumes/gcp/:/root/.config/gcloud
+      - .volumes/invocations/:/tmp/invocations
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
         - EXPERIMENT_ENV

@@ -5,7 +5,7 @@ ENV EXPERIMENT_ENV=
 ENV LSB_RELEASE=bionic
 
 # Add Base Dependencies
-RUN apt update && apt -y install cron jq git unzip zip ca-certificates curl apt-transport-https gnupg && \
+RUN apt update && apt -y install cron jq git unzip zip ca-certificates curl apt-transport-https gnupg python3-pip && \
     rm -rf /var/lib/apt/lists/*
 
 # Add Docker CLI
@@ -28,6 +28,10 @@ RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor |
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /scripts
+
+# Install Python Dependencies
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Install SAAF
 RUN git clone https://github.com/l8518/SAAF.git --depth 1
