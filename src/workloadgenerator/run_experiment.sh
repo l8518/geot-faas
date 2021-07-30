@@ -1,5 +1,5 @@
 #!/bin/bash
-WORKLOAD_GENERATOR_TIME_START=$(date +%Y%m%dT%H%M%SZ)
+WORKLOAD_GENERATOR_TIME_START=$(date +%Y%m%dT%H%M%S%3N)
 EXPERIMENT_NAME="${WORKLOAD_GENERATOR_TIME_START}_${WORKLOADGENERATOR_PROVIDER}_${WORKLOADGENERATOR_REGION}"
 FUNCTION="../../experiments/basicExperimentFunction.json"
 EXPERIMENT="../../experiments/basicExperiment.json"
@@ -10,28 +10,28 @@ echo "Running Experiment $EXPERIMENT_NAME"
 # Run Faas Runner
 pushd SAAF/test > /dev/null
 mkdir -p "$EXPERIMENT_OUT"
-WORKLOAD_GENERATOR_TIME_FAAS_RUNNER_START=$(date +%Y%m%dT%H%M%SZ)
+WORKLOAD_GENERATOR_TIME_FAAS_RUNNER_START=$(date +%Y%m%dT%H%M%S%3N)
 ./faas_runner.py -f $FUNCTION -e $EXPERIMENT -o $EXPERIMENT_OUT &> "${EXPERIMENT_OUT}${EXPERIMENT_NAME}.out"
-WORKLOAD_GENERATOR_TIME_FAAS_RUNNER_END=$(date +%Y%m%dT%H%M%SZ)
+WORKLOAD_GENERATOR_TIME_FAAS_RUNNER_END=$(date +%Y%m%dT%H%M%S%3N)
 popd > /dev/null
 
 if [ ${WORKLOADGENERATOR_UPLOAD_ARTIFACTS^^} = 'TRUE' ]; then
     mkdir -p upload
 
     # Tar Faas Runner Results
-    WORKLOAD_GENERATOR_TIME_TAR_START=$(date +%Y%m%dT%H%M%SZ)
+    WORKLOAD_GENERATOR_TIME_TAR_START=$(date +%Y%m%dT%H%M%S%3N)
     tar -zcf "upload/$EXPERIMENT_NAME.tar.gz" -C runs .
-    WORKLOAD_GENERATOR_TIME_TAR_END=$(date +%Y%m%dT%H%M%SZ)
+    WORKLOAD_GENERATOR_TIME_TAR_END=$(date +%Y%m%dT%H%M%S%3N)
 
     # Upload Faas Runner Results
-    WORKLOAD_GENERATOR_TIME_UPLOAD_START=$(date +%Y%m%dT%H%M%SZ)
+    WORKLOAD_GENERATOR_TIME_UPLOAD_START=$(date +%Y%m%dT%H%M%S%3N)
     ./upload.sh "upload/$EXPERIMENT_NAME.tar.gz" "$EXPERIMENT_NAME.tar.gz"
     if [ $? -eq 0 ]; then
         echo "OK: TAR UPLOADED"
     else
         echo "ERROR: TAR FAILED TO UPLOAD!"
     fi
-    WORKLOAD_GENERATOR_TIME_UPLOAD_END=$(date +%Y%m%dT%H%M%SZ)
+    WORKLOAD_GENERATOR_TIME_UPLOAD_END=$(date +%Y%m%dT%H%M%S%3N)
 
 fi
 
