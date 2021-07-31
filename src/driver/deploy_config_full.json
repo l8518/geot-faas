@@ -5,27 +5,119 @@
 	"experiment-provider-locations": [
 		{
 			"provider": "azure",
-			"region": "westus"
+			"region": "brazilsouth"
 		},
 		{
-			"provider": "azure",
-			"region": "westeurope"
+			"provider": "gcp",
+			"region": "southamerica-east1"
 		},
 		{
 			"provider": "aws",
-			"region": "eu-west-1"
+			"region": "sa-east-1"
+		},
+		{
+			"provider": "aws",
+			"region": "ca-central-1"
+		},
+		{
+			"provider": "gcp",
+			"region": "northamerica-northeast1"
 		},
 		{
 			"provider": "aws",
 			"region": "us-east-1"
 		},
 		{
+			"provider": "azure",
+			"region": "eastus"
+		},
+		{
 			"provider": "gcp",
-			"region": "europe-west1"
+			"region": "us-east4"
+		},
+		{
+			"provider": "aws",
+			"region": "us-west-1"
+		},
+		{
+			"provider": "aws",
+			"region": "us-west-2"
+		},
+		{
+			"provider": "azure",
+			"region": "westus"
+		},
+		{
+			"provider": "azure",
+			"region": "westus2"
 		},
 		{
 			"provider": "gcp",
 			"region": "us-west2"
+		},
+		{
+			"provider": "gcp",
+			"region": "us-west4"
+		},
+		{
+			"provider": "aws",
+			"region": "eu-west-2"
+		},
+		{
+			"provider": "azure",
+			"region": "uksouth"
+		},
+		{
+			"provider": "gcp",
+			"region": "europe-west2"
+		},
+		{
+			"provider": "aws",
+			"region": "eu-central-1"
+		},
+		{
+			"provider": "azure",
+			"region": "germanywestcentral"
+		},
+		{
+			"provider": "gcp",
+			"region": "europe-west3"
+		},
+		{
+			"provider": "aws",
+			"region": "ap-south-1"
+		},
+		{
+			"provider": "gcp",
+			"region": "asia-south1"
+		},
+		{
+			"provider": "azure",
+			"region": "centralindia"
+		},
+		{
+			"provider": "aws",
+			"region": "ap-northeast-1"
+		},
+		{
+			"provider": "gcp",
+			"region": "asia-northeast1"
+		},
+		{
+			"provider": "azure",
+			"region": "japaneast"
+		},
+		{
+			"provider": "aws",
+			"region": "ap-southeast-2"
+		},
+		{
+			"provider": "azure",
+			"region": "australiaeast"
+		},
+		{
+			"provider": "gcp",
+			"region": "australia-southeast1"
 		}
 	],
 	"saaf-config": {
