@@ -6,9 +6,13 @@ from datetime import datetime
 from pathlib import Path
 from azure.storage.blob import BlobServiceClient
 
+config_filename = os.getenv('EXPERIMENT_CONFIG') or ""
+if config_filename == "":
+    raise Exception('Missing Experiment Config')
+
+config = json.load(open(config_filename))
 num_launcher = 8
 log_path = '/tmp/invocations/'
-config = json.load(open('/scripts/deploy_config.json'))
 
 def upload_file(fp, name, azure_connecting_string, container):
     blob_service_client = BlobServiceClient.from_connection_string(azure_connecting_string)
@@ -17,8 +21,7 @@ def upload_file(fp, name, azure_connecting_string, container):
         blob_client.upload_blob(data, overwrite=True)
 
 def get_experiment_name():
-    experiment_env = os.getenv('EXPERIMENT_ENV') or ""
-    return str.lower(f"{config['experiment']['name']}{experiment_env}")
+    return str.lower(f"{config['experiment']['name']}")
 
 def measure(provider, region):
     print(f"measuring: {provider} in {region}")

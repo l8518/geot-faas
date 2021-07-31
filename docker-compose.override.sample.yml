@@ -5,6 +5,8 @@ services:
       context: src/driver
     volumes:
       - ./src/driver/:/scripts
+    environment:
+      - EXPERIMENT_CONFIG=deploy_config_test.json
   workloadgenerator:
     build:
       context: src/workloadgenerator

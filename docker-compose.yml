@@ -9,7 +9,7 @@ services:
       - .volumes/invocations/:/tmp/invocations
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-        - EXPERIMENT_ENV
+        - EXPERIMENT_CONFIG=deploy_config_full.json
   workloadgenerator:
     image: ghcr.io/l8518/geot-faas-wrklg:latest 
     volumes:

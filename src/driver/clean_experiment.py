@@ -2,11 +2,15 @@ import json
 import subprocess
 import os
 
-config = json.load(open('deploy_config.json'))
+config_filename = os.getenv('EXPERIMENT_CONFIG') or ""
+if config_filename == "":
+    raise Exception('Missing Experiment Config')
+
+
+config = json.load(open(config_filename))
 
 def get_experiment_name():
-    experiment_env = os.getenv('EXPERIMENT_ENV') or ""
-    return str.lower(f"{config['experiment']['name']}{experiment_env}")
+    return str.lower(f"{config['experiment']['name']}")
 
 def clean_azure(id_core, id, region):
     subprocess.call([f'./clean_azure.sh', id_core, id, region])

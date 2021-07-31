@@ -4,8 +4,8 @@
     "memorySettings": [],
     "payloads": [{}],
 
-    "runs": 1,
-    "threads": 1,
+    "runs": 600,
+    "threads": 4,
     "iterations": 1,
     "sleepTime": 5,
     "randomSeed": 42,

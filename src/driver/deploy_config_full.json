@@ -1,6 +1,6 @@
 {
 	"experiment": {
-		"name": "geotbench"
+		"name": "geotfullbench"
 	},
 	"experiment-provider-locations": [
 		{
