@@ -27,7 +27,9 @@ def get_experiment_name():
 def measure(provider, region):
     print(f"measuring: {provider} in {region}")
     env = get_experiment_name()
-    id = f"{env}{region}"
+    
+    # shorten id because azure only accepts max 24 chars
+    id = f"{env}{region}"[:24]
 
     result = None
     if provider in ["azure", "aws", "gcp"]:

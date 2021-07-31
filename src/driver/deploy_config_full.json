@@ -1,6 +1,6 @@
 {
 	"experiment": {
-		"name": "geotfullbench"
+		"name": "gtbf"
 	},
 	"experiment-provider-locations": [
 		{

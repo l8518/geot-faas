@@ -18,7 +18,8 @@ for pr in config['experiment-provider-locations']:
 
     provider = pr['provider']
     region = pr['region']
-    id = f"{env}{region}" 
+    # shorten id because azure only accepts max 24 chars
+    id = f"{env}{region}"[:24]
 
     print(f'cleaning {provider} region {region}')
     if provider == 'azure':
