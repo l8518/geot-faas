@@ -11,7 +11,8 @@ if config_filename == "":
     raise Exception('Missing Experiment Config')
 
 config = json.load(open(config_filename))
-num_launcher = 8
+# Create as many launchers as experiments, as these are network bound:
+num_launcher = len(config['experiment-provider-locations'])
 log_path = '/tmp/invocations/'
 
 def upload_file(fp, name, azure_connecting_string, container):
@@ -72,5 +73,7 @@ for result in fts.done:
 json_file_name = f'{invocations_begin}.json'
 with open(os.path.join(log_path, json_file_name), 'w') as outfile:
     json.dump(json_log, outfile, indent=4)
-    upload_file(os.path.join(log_path, json_file_name), json_file_name, connect_str, 'runs')
+
+upload_file(os.path.join(log_path, json_file_name), json_file_name, connect_str, 'runs')
+
 print('invocation finished + logged / uploaded')
