@@ -4,6 +4,7 @@ src/logpull/runs
 **/.env
 .vscode
 src/driver/*_saaf_config.json
+src/driver/upload.log
 src/workloadgenerator/runs
 src/workloadgenerator/upload
 data
