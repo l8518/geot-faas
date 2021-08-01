@@ -1,13 +1,15 @@
-import subprocess
 import os
+import subprocess
+from pathlib import Path
+
 from azure.storage.blob import BlobServiceClient
 
 experimentname = input("Enter experiment name:")
 
 connect_str = subprocess.check_output(
     f"az storage account show-connection-string --name {experimentname}core | jq -r .connectionString", shell=True).decode()
-download_path = "./data/downloaded"
-
+download_path = f"./data/downloaded/{experimentname}"
+Path(download_path).mkdir(parents=True, exist_ok=True)
 
 blob_service = BlobServiceClient.from_connection_string(connect_str)
 container_client = blob_service.get_container_client("runs")
