@@ -15,7 +15,7 @@ else:
 extracted_path = os.path.join("./data/extract/", experimentname)
 
 dataframes = []
-for jsonfile in glob.glob(os.path.join(extracted_path,"*.json")):
+for jsonfile in sorted(glob.glob(os.path.join(extracted_path,"*.json"))):
     print(jsonfile)
     # get filter key (first part of the string to get the different experimental runs)
     key=Path(jsonfile).stem
