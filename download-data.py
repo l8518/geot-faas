@@ -1,10 +1,15 @@
 import os
+import sys
 import subprocess
 from pathlib import Path
 
 from azure.storage.blob import BlobServiceClient
 
-experimentname = input("Enter experiment name:")
+# Get Experimentname
+if len(sys.argv) == 2:
+    experimentname = sys.argv[1]
+else:
+    experimentname = input("Enter experiment name:")
 
 connect_str = subprocess.check_output(
     f"az storage account show-connection-string --name {experimentname}core | jq -r .connectionString", shell=True).decode()

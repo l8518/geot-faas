@@ -13,3 +13,4 @@ data
 docker-compose.override.yml
 **/nohup.out
 **/__pycache__
+dataset.csv
