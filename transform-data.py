@@ -1,10 +1,13 @@
+import glob
+import multiprocessing
 import os
 import sys
-import tarfile
-import shutil
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-import glob
+from pandas.core.common import flatten
+
 import pandas as pd
+from pandas.core.frame import DataFrame
 
 # Get Experimentname
 if len(sys.argv) == 2:
@@ -14,9 +17,9 @@ else:
 
 extracted_path = os.path.join("./data/extract/", experimentname)
 
-dataframes = []
-for jsonfile in sorted(glob.glob(os.path.join(extracted_path,"*.json"))):
-    print(jsonfile)
+files = sorted(glob.glob(os.path.join(extracted_path,"*.json")))
+
+def read_into_df(jsonfile):   
     # get filter key (first part of the string to get the different experimental runs)
     key=Path(jsonfile).stem
     filter_key = key[:12]
@@ -24,22 +27,36 @@ for jsonfile in sorted(glob.glob(os.path.join(extracted_path,"*.json"))):
 
     # TODO: Raise ERROR IF MORE THAN 29 RESULTS
     if len(folders) != 29:
-        print("WARNING: MORE OR LESS THAN 29 RESULTS FOUND", len(folders))
+        print(jsonfile, "WARNING: MORE OR LESS THAN 29 RESULTS FOUND", len(folders))
 
+    dfs = []
     for folder in folders:
         invocation, provider, region = Path(folder).stem.split("_")
 
-        df = pd.read_csv(os.path.join(folder, "saafdemo-basicExperiment-0MBs-run0.csv"), skiprows=4)
+        # TODO: Log error somehow:
+        file = os.path.join(folder, "saafdemo-basicExperiment-0MBs-run0.csv")
+        if os.path.exists(file):
+            df = pd.read_csv(file, skiprows=4)
+        else:
+            df = pd.DataFrame()
+            df.insert(0, "error", 'missing csv file')
+        
         # Drop last row
         df = df.iloc[:-1 , :]
         df.insert(0, "region", region)
         df.insert(0, "provider", provider)
         df.insert(0, "workload_invocation", invocation)
         df.insert(0, "driver_invocation", key)
-        dataframes.append(df)
+        dfs.append(df)
+    return pd.concat(dfs)
 
-dataset = pd.concat(dataframes)
+dataframes = []
+with ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()) as tpe:
+    dataframes = tpe.map(read_into_df, files)
 
+dataset = pd.concat(list(dataframes))
+
+print('transforming')
 
 dataset = dataset.sort_values(by=['driver_invocation', 'workload_invocation', 'provider', 'region', '1_run_id', '2_thread_id'])
 # Make parseable for to_datetime:

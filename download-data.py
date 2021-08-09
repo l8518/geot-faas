@@ -1,6 +1,8 @@
+import multiprocessing
 import os
-import sys
 import subprocess
+import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from azure.storage.blob import BlobServiceClient
@@ -25,16 +27,24 @@ blob_list = container_client.list_blobs()
 downloaded_tars = os.listdir(download_path)
 
 print(downloaded_tars)
-for blob in blob_list:
+
+
+def download(blob):
     if blob.name in downloaded_tars:
-        print(f"{blob.name} already downloaded, skipping")
-        continue
+        # print(f"{blob.name} already downloaded, skipping")
+        return 0
 
     blob_client = blob_service.get_blob_client(container="runs", blob=blob)
     download_file_path = os.path.join(download_path, blob.name)
-    print("\nDownloading blob to \n\t" + download_file_path)
+    # print("\nDownloading blob to \n\t" + download_file_path)
 
     with open(download_file_path, "wb") as download_file:
         download_file.write(blob_client.download_blob().readall())
+    return 1
 
-print("downloaded")
+print('downloading')
+result = []
+with ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()) as tpe:
+    result = tpe.map(download, blob_list)
+
+print("downloaded", sum(result))
