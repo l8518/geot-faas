@@ -99,11 +99,6 @@
                 "osType": "Linux",
                 "restartPolicy": "[parameters('restartPolicy')]",
                 "diagnostics": {
-                    "logAnalytics": {
-                        "workspaceId": "[reference(resourceId(parameters('logAnalyticsRG'), 'Microsoft.OperationalInsights/workspaces/', parameters('logAnalyticsName')), '2015-03-20').customerId]",
-                        "workspaceKey": "[listKeys(resourceId(parameters('logAnalyticsRG'), 'Microsoft.OperationalInsights/workspaces/', parameters('logAnalyticsName')), '2015-03-20').primarySharedKey]",
-                        "logType": "ContainerInstanceLogs"
-                    }
                 }
             }
         }
