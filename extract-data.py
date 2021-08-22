@@ -5,6 +5,7 @@ import sys
 import tarfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from tqdm import tqdm
 
 # Get Experimentname
 if len(sys.argv) == 2:
@@ -15,6 +16,7 @@ else:
 download_path = os.path.join("./data/downloaded/", experimentname)
 tmp_extracted_path = os.path.join("./data/extract/", experimentname)
 Path(download_path).mkdir(parents=True, exist_ok=True)
+Path(tmp_extracted_path).mkdir(parents=True, exist_ok=True)
 
 # Fetch all files from directory + upload
 downloaded_files = sorted(os.listdir(download_path))
@@ -34,14 +36,16 @@ def extract(file):
         folder_name = file.replace('.tar.gz', '')
         if folder_name in extracted_files:
             return
-
-        tf = tarfile.open(fp)
-        targetpath = os.path.join(tmp_extracted_path, folder_name)
-        tf.extractall(targetpath)
-        tf.close()
-
+        try:
+            tf = tarfile.open(fp, mode='r:*')
+            targetpath = os.path.join(tmp_extracted_path, folder_name)
+            tf.extract(tf.getmember(os.path.join('.', 'saafdemo-basicExperiment-0MBs-run0.csv')), targetpath)
+            tf.close()
+        except Exception as e:
+            # TODO: files cannot be found --> extract out or mark as error
+            print(e)
 
 result = []
-workers = multiprocessing.cpu_count()*2
+workers = multiprocessing.cpu_count()
 with ThreadPoolExecutor(max_workers=workers) as tpe:
-    result = tpe.map(extract, downloaded_files)
+    result = list(tqdm(tpe.map(extract, downloaded_files), total=len(downloaded_files)))

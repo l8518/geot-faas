@@ -51,7 +51,8 @@ def read_into_df(jsonfile):
     return pd.concat(dfs)
 
 dataframes = []
-with ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()) as tpe:
+workers=multiprocessing.cpu_count()*2
+with ThreadPoolExecutor(max_workers=workers) as tpe:
     dataframes = tpe.map(read_into_df, files)
 
 dataset = pd.concat(list(dataframes))
@@ -63,5 +64,6 @@ dataset = dataset.sort_values(by=['driver_invocation', 'workload_invocation', 'p
 dataset['driver_invocation'] = dataset['driver_invocation']+"00"
 dataset['workload_invocation'] = dataset['workload_invocation']+"00"
 
-dataset.to_csv('dataset.csv', index=False)
+# dataset.to_csv('dataset.csv.bz2', index=False)
+dataset.to_parquet("dataset.parquet", index=False, engine="pyarrow")
 
