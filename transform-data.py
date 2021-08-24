@@ -64,6 +64,4 @@ dataset = dataset.sort_values(by=['driver_invocation', 'workload_invocation', 'p
 dataset['driver_invocation'] = dataset['driver_invocation']+"00"
 dataset['workload_invocation'] = dataset['workload_invocation']+"00"
 
-# dataset.to_csv('dataset.csv.bz2', index=False)
-dataset.to_parquet("dataset.parquet", index=False, engine="pyarrow")
-
+dataset.to_parquet("raw-dataset.parquet", index=False, engine="pyarrow")
