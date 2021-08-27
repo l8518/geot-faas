@@ -12,7 +12,7 @@ measure_groups = {
         },
         'timezone': 'America/Sao_Paulo'
     },
-    'Canada Set': {
+    'Canada': {
         'providers': {
             'AWS': ['ca-central-1'],
             'AZURE': [],
@@ -20,7 +20,7 @@ measure_groups = {
         },
         'timezone': 'America/Montreal'
     },
-    'US Virgina Set': {
+    'East US': {
         'providers': {
             'AWS': ['us-east-1'],
             'AZURE': ['eastus'],
@@ -28,7 +28,7 @@ measure_groups = {
         },
         'timezone': 'America/New_York'
     },
-    'UTC 7 Providerset': {
+    'West US': {
         'providers': {
             'AWS': ['us-west-1', 'us-west-2'],
             'AZURE': ['westus', 'westus2'],
@@ -36,7 +36,7 @@ measure_groups = {
         },
         'timezone': 'America/Los_Angeles'
     },
-    'UK Set': {
+    'United Kingdom': {
         'providers': {
             'AWS': ['eu-west-2'],
             'AZURE': ['uksouth'],
@@ -44,7 +44,7 @@ measure_groups = {
         },
         'timezone': 'Europe/London'
     },
-    'Germany Set': {
+    'Germany': {
         'providers': {
             'AWS': ['eu-central-1'],
             'AZURE': ['germanywestcentral'],
@@ -52,7 +52,7 @@ measure_groups = {
         },
         'timezone': 'Europe/Berlin'
     },
-    'Mumbai Set': {
+    'India': {
         'providers': {
             'AWS': ['ap-south-1'],
             'AZURE': ['centralindia'],
@@ -60,7 +60,7 @@ measure_groups = {
         },
         'timezone': 'Asia/Kolkata'
     },
-    'Japan Set': {
+    'Japan': {
         'providers': {
             'AWS': ['ap-northeast-1'],
             'AZURE': ['japaneast'],
@@ -68,7 +68,7 @@ measure_groups = {
         },
         'timezone': 'Asia/Tokyo'
     },
-    'Sydney Set': {
+    'Australia': {
         'providers': {
             'AWS': ['ap-southeast-2'],
             'AZURE': ['australiaeast'],
@@ -89,7 +89,7 @@ dataset['workload_invocation'] = pd.to_datetime(
 dataset['dow_utc'] = dataset['driver_invocation'].dt.day_name()
 dataset['tod_utc'] = dataset['driver_invocation'].dt.strftime('%H%M')
 
-print('prepeare local timestamp features')
+print('prepare local timestamp features')
 
 # Localize Timezones for driver invocation
 for mg in measure_groups:
