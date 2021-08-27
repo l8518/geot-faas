@@ -1,6 +1,7 @@
 import pandas as pd
 from multiprocessing import  Pool
 import multiprocessing
+import datetime
 
 from functools import partial
 import numpy as np
@@ -32,6 +33,10 @@ def run_on_subset(func, data_subset):
 
 def parallelize_on_rows(data, func):
     return parallelize(data, partial(run_on_subset, func), multiprocessing.cpu_count())
+
+# Cut Off Data
+data_from = datetime.datetime(year=2021,month=8,day=1)
+dataset = dataset[dataset['driver_invocation'] >= data_from]
 
 print(dataset.memory_usage().sum())
 
