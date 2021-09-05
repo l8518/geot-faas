@@ -5,6 +5,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from pandas.core.common import flatten
+import uuid
 
 import pandas as pd
 from pandas.core.frame import DataFrame
@@ -25,10 +26,12 @@ def read_into_df(jsonfile):
     filter_key = key[:12]
     folders = glob.glob(os.path.join(extracted_path, f"{filter_key}*{os.path.sep}"))
 
+    dirty_measurement = False
     # TODO: Raise ERROR IF MORE THAN 29 RESULTS
     if len(folders) != 29:
         print(jsonfile, "WARNING: MORE OR LESS THAN 29 RESULTS FOUND", len(folders))
-
+        dirty_measurement = True
+    
     dfs = []
     for folder in folders:
         invocation, provider, region = Path(folder).stem.split("_")
@@ -37,12 +40,14 @@ def read_into_df(jsonfile):
         file = os.path.join(folder, "saafdemo-basicExperiment-0MBs-run0.csv")
         if os.path.exists(file):
             df = pd.read_csv(file, skiprows=4)
+            # Drop last row --> contains metadata
+            df = df.iloc[:-1 , :]
         else:
             df = pd.DataFrame()
             df.insert(0, "error", 'missing csv file')
         
-        # Drop last row
-        df = df.iloc[:-1 , :]
+        df.insert(0, "folder_uuid", str(uuid.uuid1()))
+        df.insert(0, "dirty_measurement", dirty_measurement)
         df.insert(0, "region", region)
         df.insert(0, "provider", provider)
         df.insert(0, "workload_invocation", invocation)

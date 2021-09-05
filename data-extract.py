@@ -41,9 +41,11 @@ def extract(file):
             targetpath = os.path.join(tmp_extracted_path, folder_name)
             tf.extract(tf.getmember(os.path.join('.', 'saafdemo-basicExperiment-0MBs-run0.csv')), targetpath)
             tf.close()
-        except Exception as e:
+        except Exception as ex:
             # TODO: files cannot be found --> extract out or mark as error
-            print(e)
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(ex).__name__, ex.args)
+            print(message)
 
 result = []
 workers = multiprocessing.cpu_count()
