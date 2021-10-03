@@ -6,14 +6,12 @@ import datetime
 from functools import partial
 import numpy as np
 
-dataset = pd.read_parquet('dataset-cp1.parquet')
-
+dataset = pd.read_parquet('dataset-preprocessing-step-1.parquet')
 
 def get_local_dow_of_the_week(df):
     ts = df['driver_invocation']
     tz = df['timezone']
     return  ts.tz_localize('utc').tz_convert(tz).day_name()
-
 
 def get_local_tod_of_the_week(df):
     ts = df['driver_invocation']
@@ -49,4 +47,4 @@ dataset[['local_dow', 'local_tod']] = dataset[['local_dow', 'local_tod']].astype
 
 print(dataset.memory_usage().sum())
 
-dataset.to_parquet("dataset.parquet", index=False, engine="pyarrow")
+dataset.to_parquet("dataset-preprocessing-step-2.parquet", index=False, engine="pyarrow")
