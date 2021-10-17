@@ -15,4 +15,7 @@ docker-compose.override.yml
 **/__pycache__
 dataset.csv
 *.parquet
+*.parquet.zip
 *.tar.gz
+.ipynb_checkpoints/data_analysis-checkpoint.ipynb
+
