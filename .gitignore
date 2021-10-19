@@ -8,6 +8,7 @@ src/driver/upload.log
 src/workloadgenerator/runs
 src/workloadgenerator/upload
 # data
+data/downloaded/
 *.key
 *.key.pub
 docker-compose.override.yml
