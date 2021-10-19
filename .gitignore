@@ -7,7 +7,7 @@ src/driver/*_saaf_config.json
 src/driver/upload.log
 src/workloadgenerator/runs
 src/workloadgenerator/upload
-data
+# data
 *.key
 *.key.pub
 docker-compose.override.yml
@@ -17,5 +17,5 @@ dataset.csv
 *.parquet
 *.parquet.zip
 *.tar.gz
-.ipynb_checkpoints/data_analysis-checkpoint.ipynb
+.ipynb_checkpoints/*
 
