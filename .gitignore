@@ -9,6 +9,8 @@ src/workloadgenerator/runs
 src/workloadgenerator/upload
 # data
 data/downloaded/
+data/extract/
+tmp
 *.key
 *.key.pub
 docker-compose.override.yml
