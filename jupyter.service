@@ -1,0 +1,9 @@
+[Unit]
+After=network.service
+
+[Service]
+ExecStart=jupyter notebook
+User=geot
+
+[Install]
+WantedBy=default.target
