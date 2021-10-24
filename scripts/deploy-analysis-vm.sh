@@ -50,3 +50,8 @@ UUID=010855f2-d92c-4feb-a482-0c504e8f3e04   /home/geot/   xfs   defaults,nofail 
 sudo reboot
 
 git clone https://github.com/l8518/geot-faas.git
+cd geot-faas
+sudo apt update
+sudo apt install python3-pip -y
+pip3 install -r requirements.txt
+
