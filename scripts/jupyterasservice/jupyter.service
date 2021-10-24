@@ -3,7 +3,7 @@ After=network.service
 
 [Service]
 WorkingDirectory=/home/geot
-ExecStart=jupyter notebook
+ExecStart=/home/geot/.local/bin/jupyter notebook
 User=geot
 
 [Install]

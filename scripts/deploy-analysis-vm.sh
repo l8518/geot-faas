@@ -55,3 +55,13 @@ sudo apt update
 sudo apt install python3-pip -y
 pip3 install -r requirements.txt
 
+cp scripts/jupyterasservice/jupyter_notebook_config.py ~/jupyter_notebook_config.py
+sudo cp scripts/jupyterasservice/jupyter.service /etc/systemd/system/jupyter.service
+sudo systemctl daemon-reload
+sudo systemctl enable jupyter
+sudo service jupyter start
+sudo service jupyter status
+
+# Setup NSGs
+az network nsg rule create --name allow-jupyter --nsg-name geotNSG --resource-group $RG --access Allow --source-port-ranges '*' --destination-port-ranges 8888 --priority 100
+az network nsg rule update --name default-allow-ssh --nsg-name geotNSG --resource-group $RG --access Deny
