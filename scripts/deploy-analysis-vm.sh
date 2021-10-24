@@ -9,7 +9,7 @@ az vm create \
 	--boot-diagnostics-storage $SA \
 	--image "Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest" \
 	-l $LOCATION \
-	--size "Standard_D16as_v4" \
+	--size "Standard_B20ms" \
 	--admin-username "geot" \
 	--admin-password $PW \
 	--authentication-type password \
