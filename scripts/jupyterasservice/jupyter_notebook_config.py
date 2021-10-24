@@ -390,7 +390,7 @@ c.NotebookApp.ip = '0.0.0.0'
 
 ## The directory to use for notebooks and kernels.
 #  Default: ''
-c.NotebookApp.notebook_dir = '/home/geot/jupyter'
+c.NotebookApp.notebook_dir = '/home/geot/data/'
 
 ## Whether to open in a browser after starting.
 #                          The specific browser used is platform dependent and
