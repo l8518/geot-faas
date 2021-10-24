@@ -1,7 +1,3 @@
-PW="<PASSWORD>"
-LOCATION="WESTEUROPE"
-SA="geotdiag"
-RG="geotvm"
 
 az group create --name $RG --location $LOCATION
 
@@ -11,7 +7,7 @@ az vm create \
 	-n geot \
 	-g geotvm \
 	--boot-diagnostics-storage $SA \
-	--image UbuntuLTS \
+	--image "Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest" \
 	-l $LOCATION \
 	--size "Standard_D16as_v4" \
 	--admin-username "geot" \
@@ -31,6 +27,7 @@ az network public-ip update --dns-name geot -g $RG -n geotPublicIP
 
 ssh geot@geot.westeurope.cloudapp.azure.com
 
+
 // attach disk
 lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
 
@@ -41,11 +38,15 @@ sudo partprobe /dev/sdc1
 
 
 // attach disk always
-sudo mkdir ~/data
-sudo mount /dev/sdc1 ~/data
+sudo mount /dev/sdc1 /mnt
+sudo cp -rp /home/geot/. /mnt/
+sudo umount /dev/sdc1
 
 sudo blkid
 /dev/sdc1: UUID="4901ab8f-a78e-48fa-87c9-2304b6e21bcf" TYPE="xfs" PARTLABEL="xfspart" PARTUUID="1ae24f49-a7cf-4bcc-99d3-29f7cc8b856a"
 
 sudo vim /etc/fstab
-UUID=4901ab8f-a78e-48fa-87c9-2304b6e21bcf   /home/geot/data   xfs   defaults,nofail   1   2
+UUID=010855f2-d92c-4feb-a482-0c504e8f3e04   /home/geot/   xfs   defaults,nofail   1   2
+sudo reboot
+
+git clone https://github.com/l8518/geot-faas.git
