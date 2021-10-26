@@ -1,0 +1,12 @@
+                                   measure group  Runtime CV
+provider region                                             
+GCP      asia-northeast1                   Japan    0.259231
+         asia-south1                       India    0.154905
+         australia-southeast1          Australia    0.164807
+         northamerica-northeast1          Canada    0.139920
+         europe-west3                    Germany    0.182438
+         europe-west2             United Kingdom    0.186408
+         southamerica-east1        South America    0.183405
+         us-east4                        East US    0.184515
+         us-west2                        West US    0.188668
+         us-west4                        West US    0.139732

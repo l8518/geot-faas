@@ -1,0 +1,11 @@
+                              measure group  Runtime CV
+provider region                                        
+AZURE    japaneast                    Japan    0.263333
+         centralindia                 India    0.288369
+         australiaeast            Australia    0.212299
+         germanywestcentral         Germany    0.298079
+         uksouth             United Kingdom    0.292802
+         brazilsouth          South America    0.285020
+         eastus                     East US    0.194296
+         westus                     West US    0.469833
+         westus2                    West US    0.204967
