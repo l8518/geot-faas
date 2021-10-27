@@ -2,7 +2,6 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-DATA_FOLDER = "data"
 PLOT_FOLDER = "plots"
 SIZES = {
             "tiny" : '-0.01',
@@ -10,7 +9,7 @@ SIZES = {
             "full" : ''
         }
 
-def get_dataset_path(DATASET_NAME, FSIZE):
+def get_dataset_path(DATASET_NAME, FSIZE, DATA_FOLDER='data'):
     full_filename = f"{DATASET_NAME}{SIZES[FSIZE]}.parquet"
     return os.path.join(DATA_FOLDER, full_filename)
 
