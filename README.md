@@ -27,3 +27,9 @@
 
 - You can execute all commands from `docker-compose run driver bash` 
    
+
+# Analysis
+
+```
+jupyter notebook
+``` 
