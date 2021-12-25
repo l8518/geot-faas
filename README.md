@@ -32,4 +32,6 @@
 
 ```
 jupyter notebook
+or
+python3 -m notebook
 ``` 
