@@ -29,21 +29,23 @@ def plot(name, **kwdata):
 def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
 
-def boxplot(ax, df, ytitle, tickf, rot=0):
+def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False):
     fig = ax.get_figure()
     gs = ax.get_subplotspec()
     ax.remove()
     ax = fig.add_subplot(gs)
 
-    df.boxplot(subplots=False, ax=ax, showfliers=False)
+    df.boxplot(subplots=False, ax=ax, showfliers=False, sharex=sharex)
 
-    labels = []
-    for tick in ax.get_xticklabels():
-        labels.append(tickf(tick))
-      
-    ax.set_xticklabels(labels)
+    if (not sharex):
+        labels = []
+        for tick in ax.get_xticklabels():
+            labels.append(tickf(tick))
+        ax.set_xticklabels(labels)
+        plt.setp(ax.get_xticklabels(), rotation=rot)
+
     ax.set_ylabel(ytitle)
-    plt.setp(ax.get_xticklabels(), rotation=rot)
+    
     return ax
 
 def tick_get_1st(x):
