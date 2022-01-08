@@ -37,7 +37,9 @@ def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False):
 
     df.boxplot(subplots=False, ax=ax, showfliers=False, sharex=sharex)
 
-    if (not sharex):
+    if (sharex):
+        ax.set_xticklabels([])
+    else:
         labels = []
         for tick in ax.get_xticklabels():
             labels.append(tickf(tick))
