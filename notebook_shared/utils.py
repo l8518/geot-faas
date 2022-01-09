@@ -36,13 +36,13 @@ def plot(name_or_name_components, **kwdata):
 def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
 
-def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False):
+def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
     fig = ax.get_figure()
     gs = ax.get_subplotspec()
     ax.remove()
     ax = fig.add_subplot(gs)
 
-    df.boxplot(subplots=False, ax=ax, showfliers=False, sharex=sharex)
+    df.boxplot(subplots=False, ax=ax, showfliers=showfliers, sharex=sharex)
 
     if (sharex):
         ax.set_xticklabels([])
