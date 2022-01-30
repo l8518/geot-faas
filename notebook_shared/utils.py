@@ -59,3 +59,23 @@ def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
 
 def tick_get_1st(x):
     return x.get_text()[1:].split(',')[0]
+
+def remove_outliers_group_std(df, groupcol, col, score=3):
+    
+    grps = df.groupby(groupcol)[col]
+    grps_mean = grps.transform('mean')
+    grps_std = grps.transform('std')
+    
+    m = df[col].between(grps_mean.sub(grps_std.mul(score)), grps_mean.add(grps_std.mul(score)), inclusive='neither')
+
+    return df.loc[m]
+
+def remove_outliers_group_quantiles(df, groupcol, col):
+    
+    grps = df.groupby(groupcol, observed=True)[col]
+    
+    grps_q1 = grps.transform(lambda x: x.quantile(0.25))
+    grps_q2 = grps.transform(lambda x: x.quantile(0.75))
+    m = df[col].between(grps_q1, grps_q2)
+
+    return df.loc[m]
