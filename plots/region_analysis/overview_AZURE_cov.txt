@@ -1,11 +1,11 @@
 region
-australiaeast         0.212299
-brazilsouth           0.285020
-centralindia          0.288369
-eastus                0.194296
-germanywestcentral    0.298079
-japaneast             0.263333
-uksouth               0.292802
-westus                0.469833
-westus2               0.204967
+australiaeast         0.215222
+brazilsouth           0.285533
+centralindia          0.288335
+eastus                0.277189
+germanywestcentral    0.359126
+japaneast             0.265224
+uksouth               0.300612
+westus                0.369077
+westus2               0.230395
 Name: runtime, dtype: float64
