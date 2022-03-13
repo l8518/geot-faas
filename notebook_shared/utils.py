@@ -33,6 +33,25 @@ def plot(name_or_name_components, **kwdata):
             f.write(str_resp)
             print(key, "\n", str_resp)
 
+def savefig(name_or_name_components, fig, **kwdata):
+
+    if (type(name_or_name_components) is list):
+        name = name_or_name_components[-1]
+        folder = os.path.join(PLOT_FOLDER, *(name_or_name_components[:-1]))
+    else:
+        name = name_or_name_components
+        folder = PLOT_FOLDER
+    if not os.path.isdir(folder):
+       os.makedirs(folder)
+    fig.savefig(os.path.join(folder, f"{name}.pdf"))
+
+    for key in kwdata:
+        data = kwdata[key]
+        str_resp = str(data)
+        with open(os.path.join(folder, f"{name}_{key}.txt"), 'w') as f:
+            f.write(str_resp)
+            print(key, "\n", str_resp)
+
 def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
 
