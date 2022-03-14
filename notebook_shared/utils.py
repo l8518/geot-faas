@@ -33,7 +33,7 @@ def plot(name_or_name_components, **kwdata):
             f.write(str_resp)
             print(key, "\n", str_resp)
 
-def savefig(name_or_name_components, fig, **kwdata):
+def savefig(fig, name_or_name_components, **kwdata):
 
     if (type(name_or_name_components) is list):
         name = name_or_name_components[-1]
@@ -50,7 +50,6 @@ def savefig(name_or_name_components, fig, **kwdata):
         str_resp = str(data)
         with open(os.path.join(folder, f"{name}_{key}.txt"), 'w') as f:
             f.write(str_resp)
-            print(key, "\n", str_resp)
 
 def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
