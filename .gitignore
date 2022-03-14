@@ -22,3 +22,5 @@ dataset.csv
 *.tar.gz
 .ipynb_checkpoints/*
 
+pickles/temporal_analysis/decomposition.p
+
