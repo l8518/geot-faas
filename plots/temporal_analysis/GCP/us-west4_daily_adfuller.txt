@@ -1,8 +1,8 @@
 ----Augmented Dickey-Fuller unit root test for unit root - Test Results----
 H0 cannot be rejected.
 -> The coefficient on the lagged level equals 1 - unit root -> non-stationary, there is a unit root, time-dependent 
-test statistic       -2.1230560620408743
-p value              0.5331639344646999
+test statistic       -2.0554140346653003
+p value              0.5709550984455909
 used lag             7              
 nobs                 53             
 critical value  1%   -4.140604648065181
