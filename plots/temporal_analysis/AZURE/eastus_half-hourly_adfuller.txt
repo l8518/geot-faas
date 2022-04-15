@@ -1,8 +1,8 @@
 ----Augmented Dickey-Fuller unit root test for unit root - Test Results----
 H0 can be rejected with 1% confidence.
 -> The coefficient on the lagged level < 1 - stationary -> stationary, there is no unit root, not time-dependent 
-test statistic       -6.904566248693551
-p value              2.3204521120567594e-08
+test statistic       -6.9988415424657155
+p value              1.4215563440918843e-08
 used lag             48             
 nobs                 2852           
 critical value  1%   -3.9619477995214742

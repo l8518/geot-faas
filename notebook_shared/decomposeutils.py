@@ -22,7 +22,7 @@ def plot_decompose(decomposed_data, timezone,
     with plt.rc_context():
         plt.rc("figure", figsize=figsize)
 
-        fig, axis = plt.subplots(figsize=(24,12), sharex=True, nrows=4)
+        fig, axis = plt.subplots(figsize=(24,10), sharex=True, nrows=4, gridspec_kw={'height_ratios': [1, 1, 2, 2]})
         
         # Set xlims when not set:
         if (start is None) or (start is not None and type(start) is not str):
@@ -62,6 +62,7 @@ def plot_decompose(decomposed_data, timezone,
 
         fig.autofmt_xdate()
         plt.xticks(rotation=xticksrotation)
+        fig.tight_layout()
         return fig
 
 # Prints the results of augmented Dickey–Fuller test (ADF)
@@ -227,6 +228,7 @@ def stats_test(df, adflag=None, test_regression='ct'):
     df.plot.density(ax=axes[0])
     df.plot.hist(ax=axes[1])
     
+    fig_dist.tight_layout()
     return {"adfuller": {'test': test_adfuller, "result": adf_result},
             "kpss": {'test': test_kpss, "result": kpss_result},
             "case": case, "case_desc": case_desc[case], "fig_dist" : fig_dist, "fig_corr": fig_corr}
@@ -262,13 +264,13 @@ def seasonal_analysis(seasonal_df, dt_rounding, provider, region, timezone):
     x = sdf.groupby(by='hist').quantile(0.5).values
     x = np.insert(x, 0, np.nan)
     ax.plot(x, 'r--', alpha=0.5)
-    fig.tight_layout()
     
     # Remove Titles
     fig.suptitle('')
     ax.set_title('')
     ax.set_xlabel('')
     
+    fig.tight_layout()
     return {"fig": fig, "data": sdf}
 
 from statsmodels.tsa.seasonal import STL

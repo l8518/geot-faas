@@ -1,8 +1,8 @@
 ----Kwiatkowski-Phillips-Schmidt-Shin test for stationarity - Test Results----
 H0 can be rejected with 1% confidence.
 -> The series is not trend stationary -> time-dependent 
-test statistic       0.1657928009508033
-p value              0.03350599920766392
+test statistic       0.16409977936422318
+p value              0.03491685052981401
 used lag             7              
 nobs                 61             
 critical value  1%   0.216          
