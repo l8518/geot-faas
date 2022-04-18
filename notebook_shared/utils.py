@@ -4,14 +4,16 @@ import matplotlib.pyplot as plt
 
 PLOT_FOLDER = "plots"
 SIZES = {
-            "tiny" : '-0.01',
-            "small" : '-0.1',
-            "full" : ''
-        }
+    "tiny": '-0.01',
+    "small": '-0.1',
+            "full": ''
+}
+
 
 def get_dataset_path(DATASET_NAME, FSIZE, DATA_FOLDER='data'):
     full_filename = f"{DATASET_NAME}{SIZES[FSIZE]}.parquet"
     return os.path.join(DATA_FOLDER, full_filename)
+
 
 def plot(name_or_name_components, **kwdata):
 
@@ -22,7 +24,7 @@ def plot(name_or_name_components, **kwdata):
         name = name_or_name_components
         folder = PLOT_FOLDER
     if not os.path.isdir(folder):
-       os.makedirs(folder)
+        os.makedirs(folder)
     plt.savefig(os.path.join(folder, f"{name}.pdf"))
     plt.show()
     plt.close()
@@ -33,6 +35,7 @@ def plot(name_or_name_components, **kwdata):
             f.write(str_resp)
             print(key, "\n", str_resp)
 
+
 def savefig(fig, name_or_name_components, **kwdata):
 
     if (type(name_or_name_components) is list):
@@ -42,7 +45,7 @@ def savefig(fig, name_or_name_components, **kwdata):
         name = name_or_name_components
         folder = PLOT_FOLDER
     if not os.path.isdir(folder):
-       os.makedirs(folder)
+        os.makedirs(folder)
     fig.savefig(os.path.join(folder, f"{name}.pdf"))
 
     for key in kwdata:
@@ -51,8 +54,10 @@ def savefig(fig, name_or_name_components, **kwdata):
         with open(os.path.join(folder, f"{name}_{key}.txt"), 'w') as f:
             f.write(str_resp)
 
+
 def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
+
 
 def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
     fig = ax.get_figure()
@@ -72,28 +77,70 @@ def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
         plt.setp(ax.get_xticklabels(), rotation=rot)
 
     ax.set_ylabel(ytitle)
-    
+
     return ax
+
 
 def tick_get_1st(x):
     return x.get_text()[1:].split(',')[0]
 
+
 def remove_outliers_group_std(df, groupcol, col, score=3):
-    
+
     grps = df.groupby(groupcol)[col]
     grps_mean = grps.transform('mean')
     grps_std = grps.transform('std')
-    
-    m = df[col].between(grps_mean.sub(grps_std.mul(score)), grps_mean.add(grps_std.mul(score)), inclusive='neither')
+
+    m = df[col].between(grps_mean.sub(grps_std.mul(score)), grps_mean.add(
+        grps_std.mul(score)), inclusive='neither')
 
     return df.loc[m]
 
+
 def remove_outliers_group_quantiles(df, groupcol, col):
-    
+
     grps = df.groupby(groupcol, observed=True)[col]
-    
+
     grps_q1 = grps.transform(lambda x: x.quantile(0.25))
     grps_q2 = grps.transform(lambda x: x.quantile(0.75))
     m = df[col].between(grps_q1, grps_q2)
 
     return df.loc[m]
+
+
+def provider_region_colors(region):
+    color_region = {
+        # aws
+        'ap-south-1': 'tab:blue',
+        'ap-southeast-2': 'tab:orange',
+        'ca-central-1': 'tab:green',
+        'ap-northeast-1': 'tab:red',
+        'eu-central-1': 'tab:purple',
+        'us-east-1': 'tab:brown',
+        'sa-east-1': 'tab:pink',
+        'eu-west-2': 'tab:gray',
+        'us-west-1': 'tab:olive',
+        'us-west-2': 'tab:cyan',
+        # azure
+        'australiaeast': 'tab:blue',
+        'eastus': 'tab:orange',
+        'brazilsouth': 'tab:green',
+        'centralindia': 'tab:red',
+        'germanywestcentral': 'tab:purple',
+        'japaneast': 'tab:brown',
+        'westus': 'tab:pink',
+        'uksouth': 'tab:gray',
+        'westus2': 'tab:olive',
+        # gcp
+        'asia-northeast1': 'tab:blue',
+        'australia-southeast1': 'tab:orange',
+        'europe-west2': 'tab:green',
+        'asia-south1': 'tab:red',
+        'europe-west3': 'tab:purple',
+        'northamerica-northeast1': 'tab:brown',
+        'southamerica-east1': 'tab:pink',
+        'us-east4': 'tab:gray',
+        'us-west2': 'tab:olive',
+        'us-west4': 'tab:cyan',
+    }
+    return color_region[region]
