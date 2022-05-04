@@ -1,12 +1,12 @@
-                         Model 63   Model 79    Model 85
-region                                                  
-asia-northeast1          12.31664  24.192825   63.490535
-asia-south1                   NaN        NaN  100.000000
-australia-southeast1          NaN  44.288705   55.711295
-europe-west2                  NaN   2.091200   97.908800
-europe-west3                  NaN  36.124145   63.875855
-northamerica-northeast1       NaN        NaN  100.000000
-southamerica-east1            NaN  52.392529   47.607471
-us-east4                      NaN  63.604870   36.395130
-us-west2                      NaN        NaN  100.000000
-us-west4                      NaN        NaN  100.000000
+                          Model 63   Model 79    Model 85
+region                                                   
+asia-northeast1          12.207598  24.622105   63.170297
+asia-south1                    NaN        NaN  100.000000
+australia-southeast1           NaN  44.096524   55.903476
+europe-west2                   NaN   2.091954   97.908046
+europe-west3                   NaN  36.057002   63.942998
+northamerica-northeast1        NaN        NaN  100.000000
+southamerica-east1             NaN  52.296373   47.703627
+us-east4                       NaN  63.603976   36.396024
+us-west2                       NaN        NaN  100.000000
+us-west4                       NaN        NaN  100.000000

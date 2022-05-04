@@ -1,12 +1,12 @@
 region
-ap-northeast-1    0.159860
-ap-south-1        0.155950
-ap-southeast-2    0.149037
-ca-central-1      0.162341
-eu-central-1      0.142820
-eu-west-2         0.149684
-sa-east-1         0.142681
-us-east-1         0.147155
-us-west-1         0.162346
-us-west-2         0.157484
+ap-northeast-1    0.165571
+ap-south-1        0.154348
+ap-southeast-2    0.148271
+ca-central-1      0.160348
+eu-central-1      0.140846
+eu-west-2         0.158220
+sa-east-1         0.141469
+us-east-1         0.146367
+us-west-1         0.159309
+us-west-2         0.155718
 Name: runtime, dtype: float64
