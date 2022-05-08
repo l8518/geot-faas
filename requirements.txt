@@ -11,3 +11,4 @@ azure-cli==2.29.0
 statsmodels==0.13.0
 swifter==1.1.2
 autopep8
+blosc==1.10.6
