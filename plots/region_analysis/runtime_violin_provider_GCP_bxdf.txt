@@ -1,0 +1,27 @@
+                        runtime                                              \
+                          count        mean        std    min    25%    50%   
+region                                                                        
+asia-northeast1          8772.0  504.495554  33.065054  445.0  474.0  512.0   
+asia-south1              8721.0  502.768375  19.807063  455.0  489.0  504.0   
+australia-southeast1     8827.0  434.982554  32.111576  383.0  402.0  443.0   
+europe-west2             8806.0  498.544402  30.498896  456.0  471.0  491.0   
+europe-west3             8796.0  481.524329  28.796839  440.0  459.0  474.0   
+northamerica-northeast1  8775.0  463.632707  15.965983  437.0  452.0  462.0   
+southamerica-east1       8804.0  457.245457  31.880828  416.0  430.0  446.0   
+us-east4                 8753.0  479.848395  28.409398  436.0  458.0  473.0   
+us-west2                 8779.0  501.491742  31.320774  458.0  474.0  493.0   
+us-west4                 8728.0  472.268217  15.048964  444.0  461.0  471.0   
+
+                                       
+                           75%    max  
+region                                 
+asia-northeast1          531.0  559.0  
+asia-south1              518.0  539.0  
+australia-southeast1     464.0  480.0  
+europe-west2             528.0  553.0  
+europe-west3             502.0  541.0  
+northamerica-northeast1  474.0  505.0  
+southamerica-east1       490.0  514.0  
+us-east4                 496.0  544.0  
+us-west2                 532.0  556.0  
+us-west4                 483.0  508.0  
