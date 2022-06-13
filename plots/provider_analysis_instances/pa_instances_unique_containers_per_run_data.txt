@@ -1,6 +1,13 @@
-         Unique Container Id                                             
-                       count      mean       std  min  25%  50%  75%  max
-provider                                                                 
-AWS                  28927.0  3.239050  0.657055  1.0  3.0  3.0  4.0  5.0
-AZURE                25935.0  2.522961  0.679154  1.0  2.0  3.0  3.0  4.0
-GCP                  29006.0  4.177515  0.906849  1.0  4.0  4.0  5.0  6.0
+         Unique Container Id                                               \
+                       count       mean        std  min   25%   50%   75%   
+provider                                                                    
+AWS                  28929.0   3.997995   0.095871  3.0   4.0   4.0   4.0   
+AZURE                25953.0   3.309059   0.584229  1.0   3.0   3.0   4.0   
+GCP                  29006.0  15.166241  14.641359  4.0  10.0  11.0  13.0   
+
+                 
+            max  
+provider         
+AWS         8.0  
+AZURE       5.0  
+GCP       163.0  
