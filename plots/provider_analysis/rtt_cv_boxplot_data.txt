@@ -1,5 +1,5 @@
           Round Trip Time CV
 provider                    
-AWS                 4.419926
-AZURE               1.233962
-GCP                 0.345833
+AWS                 5.385519
+AZURE               1.249273
+GCP                 0.391586
