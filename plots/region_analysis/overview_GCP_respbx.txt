@@ -1,9 +1,27 @@
-             counts
-count  29006.000000
-mean     599.873785
-std        5.871094
-min       61.000000
-25%      600.000000
-50%      600.000000
-75%      600.000000
-max      600.000000
+                                  counts                                       \
+                                   count        mean        std    min    25%   
+provider region                                                                 
+GCP      asia-northeast1          2900.0  599.771724   2.367633  484.0  600.0   
+         asia-south1              2901.0  599.815926   9.895867   67.0  600.0   
+         australia-southeast1     2901.0  599.946915   2.748280  452.0  600.0   
+         europe-west2             2901.0  599.778697  10.056151   61.0  600.0   
+         europe-west3             2901.0  599.890383   4.668055  349.0  600.0   
+         northamerica-northeast1  2901.0  599.805240   7.829144  221.0  600.0   
+         southamerica-east1       2900.0  599.855862   5.116772  325.0  600.0   
+         us-east4                 2901.0  599.910376   4.808710  341.0  600.0   
+         us-west2                 2900.0  599.963103   0.323321  594.0  600.0   
+         us-west4                 2900.0  599.999655   0.018570  599.0  600.0   
+
+                                                       
+                                    50%    75%    max  
+provider region                                        
+GCP      asia-northeast1          600.0  600.0  600.0  
+         asia-south1              600.0  600.0  600.0  
+         australia-southeast1     600.0  600.0  600.0  
+         europe-west2             600.0  600.0  600.0  
+         europe-west3             600.0  600.0  600.0  
+         northamerica-northeast1  600.0  600.0  600.0  
+         southamerica-east1       600.0  600.0  600.0  
+         us-east4                 600.0  600.0  600.0  
+         us-west2                 600.0  600.0  600.0  
+         us-west4                 600.0  600.0  600.0  

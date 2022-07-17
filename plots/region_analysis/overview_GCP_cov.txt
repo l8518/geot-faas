@@ -1,12 +1,12 @@
 region
-asia-northeast1            0.269380
-asia-south1                0.154203
-australia-southeast1       0.164886
-europe-west2               0.187925
-europe-west3               0.180039
-northamerica-northeast1    0.139756
-southamerica-east1         0.185162
-us-east4                   0.185079
-us-west2                   0.188033
-us-west4                   0.140372
+asia-northeast1            26.937972
+asia-south1                15.420295
+australia-southeast1       16.488610
+europe-west2               18.792549
+europe-west3               18.003871
+northamerica-northeast1    13.975599
+southamerica-east1         18.516237
+us-east4                   18.507923
+us-west2                   18.803290
+us-west4                   14.037247
 Name: runtime, dtype: float64
