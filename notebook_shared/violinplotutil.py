@@ -26,6 +26,7 @@ class CustomViolinPlotter(_ViolinPlotter):
         if (customlineswidth is None):
                 customlineswidth = 4
 
+        color = 'b'
         self.customlineswidth = customlineswidth
         
         super().__init__(x, y, hue, data, order, hue_order,
@@ -58,7 +59,7 @@ class CustomViolinPlotter(_ViolinPlotter):
                 zorder=3,
                 linewidth=self.linewidth,
                 alpha=0.8,
-                color='red')   
+                color='lightgray')   
             # Improved Whiskers:
             # min
             ax.plot([center - 0.1, center + 0.1], [h2, h2],
@@ -80,15 +81,17 @@ class CustomViolinPlotter(_ViolinPlotter):
                 zorder=3,
                 linewidth=self.linewidth,
                 alpha=0.8,
-                color='red')     
+                color='lightgray')     
         
         
         # Plot mean line into violinplot
         mean = np.mean(data)
-        ax.plot([center - 0.1, center + 0.1], [mean, mean],
-                linewidth=2,
-                alpha=0.8,
-                color='orangered', zorder = 5)
+        ax.scatter(center, mean, alpha=1, s=80, c='red', zorder=5, marker=(5, 2))
+
+        #ax.plot([center - 0.1, center + 0.1], [mean, mean],
+        #        linewidth=2,
+        #        alpha=0.8,
+        #        color='orangered', zorder = 5)
         
         self.linewidth = defaultlinewidth
 

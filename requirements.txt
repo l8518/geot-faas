@@ -12,3 +12,4 @@ statsmodels==0.13.0
 swifter==1.1.2
 autopep8
 blosc==1.10.6
+tslearn==0.5.2

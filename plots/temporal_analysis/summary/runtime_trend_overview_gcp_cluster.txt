@@ -1,0 +1,1 @@
+{'Cluster 1': ['northamerica-northeast1', 'us-west4'], 'Cluster 2': ['europe-west2', 'asia-northeast1', 'us-west2'], 'Cluster 3': ['asia-south1', 'europe-west3', 'us-east4'], 'Cluster 4': ['australia-southeast1', 'southamerica-east1']}

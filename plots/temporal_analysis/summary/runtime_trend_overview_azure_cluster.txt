@@ -1,0 +1,1 @@
+{'Cluster 1': ['brazilsouth', 'uksouth', 'japaneast'], 'Cluster 2': ['eastus', 'australiaeast', 'westus', 'westus2'], 'Cluster 3': ['centralindia', 'germanywestcentral']}

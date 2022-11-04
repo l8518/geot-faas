@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 
 PLOT_FOLDER = "plots"
 SIZES = {
@@ -59,13 +60,21 @@ def cov(x):
     return np.std(x, ddof=1) / np.mean(x)
 
 
-def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
+def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False, with_mean=False, by=None, nticks = None):
     fig = ax.get_figure()
-    gs = ax.get_subplotspec()
-    ax.remove()
-    ax = fig.add_subplot(gs)
+    
+    medianprops = dict(color='k')
+    meanprops = dict(marker=(5, 2), markeredgecolor='red')
 
-    df.boxplot(subplots=False, ax=ax, showfliers=showfliers, sharex=sharex)
+    subplots = False
+    if by is not None:
+        df.boxplot(ax=ax, by=by, showfliers=showfliers, showmeans=with_mean, medianprops=medianprops, meanprops=meanprops)
+        df = df.groupby(by)
+    else:
+        gs = ax.get_subplotspec()
+        ax.remove()
+        ax = fig.add_subplot(gs)
+        df.boxplot(subplots=subplots, ax=ax, showfliers=showfliers, showmeans=with_mean, sharex=sharex, medianprops=medianprops, meanprops=meanprops)
 
     if (sharex):
         ax.set_xticklabels([])
@@ -75,9 +84,12 @@ def boxplot(ax, df, ytitle, tickf, rot=0, sharex=False, showfliers=False):
             labels.append(tickf(tick))
         ax.set_xticklabels(labels)
         plt.setp(ax.get_xticklabels(), rotation=rot)
-
+    
     ax.set_ylabel(ytitle)
-
+    
+    if (nticks is not None):
+        ax.set_ylim(min(ax.get_yticks()), max(ax.get_yticks()))
+        ax.yaxis.set_major_locator(matplotlib.ticker.LinearLocator(nticks))
     return ax
 
 
