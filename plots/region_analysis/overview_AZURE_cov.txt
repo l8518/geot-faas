@@ -1,10 +1,10 @@
 region
 australiaeast         21.229942
-brazilsouth           28.502017
-centralindia          28.836876
 eastus                19.429611
 germanywestcentral    29.807909
+centralindia          28.836876
 japaneast             26.333317
+brazilsouth           28.502017
 uksouth               29.280190
 westus                46.983335
 westus2               20.496664

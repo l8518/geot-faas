@@ -1,27 +1,27 @@
                                   counts                                     \
                                    count      mean       std  min  25%  50%   
 provider region                                                               
-GCP      asia-northeast1          2900.0  5.999655  0.018570  5.0  6.0  6.0   
-         asia-south1              2901.0  5.998276  0.092832  1.0  6.0  6.0   
-         australia-southeast1     2901.0  5.999655  0.018566  5.0  6.0  6.0   
-         europe-west2             2901.0  5.997932  0.094664  1.0  6.0  6.0   
-         europe-west3             2901.0  5.998966  0.055699  3.0  6.0  6.0   
+GCP      australia-southeast1     2901.0  5.999655  0.018566  5.0  6.0  6.0   
          northamerica-northeast1  2901.0  5.997932  0.083020  2.0  6.0  6.0   
-         southamerica-east1       2900.0  5.998966  0.055709  3.0  6.0  6.0   
          us-east4                 2901.0  5.998966  0.055699  3.0  6.0  6.0   
+         europe-west3             2901.0  5.998966  0.055699  3.0  6.0  6.0   
+         asia-south1              2901.0  5.998276  0.092832  1.0  6.0  6.0   
+         asia-northeast1          2900.0  5.999655  0.018570  5.0  6.0  6.0   
+         southamerica-east1       2900.0  5.998966  0.055709  3.0  6.0  6.0   
+         europe-west2             2901.0  5.997932  0.094664  1.0  6.0  6.0   
          us-west2                 2900.0  6.000000  0.000000  6.0  6.0  6.0   
          us-west4                 2900.0  6.000000  0.000000  6.0  6.0  6.0   
 
                                             
                                   75%  max  
 provider region                             
-GCP      asia-northeast1          6.0  6.0  
-         asia-south1              6.0  6.0  
-         australia-southeast1     6.0  6.0  
-         europe-west2             6.0  6.0  
-         europe-west3             6.0  6.0  
+GCP      australia-southeast1     6.0  6.0  
          northamerica-northeast1  6.0  6.0  
-         southamerica-east1       6.0  6.0  
          us-east4                 6.0  6.0  
+         europe-west3             6.0  6.0  
+         asia-south1              6.0  6.0  
+         asia-northeast1          6.0  6.0  
+         southamerica-east1       6.0  6.0  
+         europe-west2             6.0  6.0  
          us-west2                 6.0  6.0  
          us-west4                 6.0  6.0  

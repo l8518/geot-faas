@@ -1,12 +1,25 @@
-                          Model 63   Model 79    Model 85
-region                                                   
-asia-northeast1          12.207598  24.622105   63.170297
-asia-south1                    NaN        NaN  100.000000
-australia-southeast1           NaN  44.096524   55.903476
-europe-west2                   NaN   2.091954   97.908046
-europe-west3                   NaN  36.057002   63.942998
-northamerica-northeast1        NaN        NaN  100.000000
-southamerica-east1             NaN  52.296373   47.703627
-us-east4                       NaN  63.603976   36.396024
-us-west2                       NaN        NaN  100.000000
-us-west4                       NaN        NaN  100.000000
+                                                  Model 63   Model 79  \
+measure group  provider region                                          
+Australia      GCP      australia-southeast1           NaN  44.096524   
+Canada         GCP      northamerica-northeast1        NaN        NaN   
+East US        GCP      us-east4                       NaN  63.603976   
+Germany        GCP      europe-west3                   NaN  36.057002   
+India          GCP      asia-south1                    NaN        NaN   
+Japan          GCP      asia-northeast1          12.207598  24.622105   
+South America  GCP      southamerica-east1             NaN  52.296373   
+United Kingdom GCP      europe-west2                   NaN   2.091954   
+West US        GCP      us-west2                       NaN        NaN   
+                        us-west4                       NaN        NaN   
+
+                                                   Model 85  
+measure group  provider region                               
+Australia      GCP      australia-southeast1      55.903476  
+Canada         GCP      northamerica-northeast1  100.000000  
+East US        GCP      us-east4                  36.396024  
+Germany        GCP      europe-west3              63.942998  
+India          GCP      asia-south1              100.000000  
+Japan          GCP      asia-northeast1           63.170297  
+South America  GCP      southamerica-east1        47.703627  
+United Kingdom GCP      europe-west2              97.908046  
+West US        GCP      us-west2                 100.000000  
+                        us-west4                 100.000000  

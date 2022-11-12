@@ -6,7 +6,8 @@ import pytz
 from pandas.plotting import autocorrelation_plot
 from statsmodels.tsa.seasonal import STL
 from statsmodels.tsa.stattools import adfuller, kpss
-
+import seaborn as sns
+sns.set()
 
 def get_timezone(dataset, provider, region):
     timezones = dataset[(dataset['provider'] == provider) & (
@@ -22,12 +23,12 @@ def get_timezone(dataset, provider, region):
 def plot_decompose(decomposed_data, timezone,
                    start=None, end=None,
                    figsize=(20, 8), dtfmt='%d/%m',
-                   xtickstepsize=2, xticksrotation=45):
-
+                   xtickstepsize=2, xticksrotation=45, font_scale=1):
+    sns.set(font_scale=font_scale)
     with plt.rc_context():
         plt.rc("figure", figsize=figsize)
 
-        fig, axis = plt.subplots(figsize=(24, 10), sharex=True, nrows=4, gridspec_kw={
+        fig, axis = plt.subplots(figsize=(figsize), sharex=True, nrows=4, gridspec_kw={
                                  'height_ratios': [1, 1, 2, 2]})
 
         # Set xlims when not set:
