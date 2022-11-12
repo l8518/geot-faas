@@ -1,0 +1,1 @@
+Case 1: Both tests conclude that the series is not stationary - The series is not stationary

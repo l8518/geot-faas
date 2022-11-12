@@ -1,47 +1,47 @@
                                             Xeon\nE5-2673 v3\n@2.40GHz\n(Model 63)  \
 measure group  provider region                                                       
-Australia      AZURE    australiaeast                                    16.847237   
-East US        AZURE    eastus                                           24.811459   
+Australia      AZURE    australiaeast                                    16.797081   
+East US        AZURE    eastus                                           24.544859   
 Germany        AZURE    germanywestcentral                                     NaN   
-India          AZURE    centralindia                                      0.323737   
-Japan          AZURE    japaneast                                         0.057824   
-South America  AZURE    brazilsouth                                      26.970616   
-United Kingdom AZURE    uksouth                                          10.160088   
-West US        AZURE    westus                                           16.741396   
-                        westus2                                           1.160833   
+India          AZURE    centralindia                                      0.309975   
+Japan          AZURE    japaneast                                         0.076161   
+South America  AZURE    brazilsouth                                      26.982614   
+United Kingdom AZURE    uksouth                                          10.108581   
+West US        AZURE    westus                                           16.786612   
+                        westus2                                           1.140948   
 
                                             Xeon\nE5-2673 v4\n@2.30GHz\n(Model 79)  \
 measure group  provider region                                                       
-Australia      AZURE    australiaeast                                    57.868364   
-East US        AZURE    eastus                                           39.000292   
-Germany        AZURE    germanywestcentral                                2.154948   
-India          AZURE    centralindia                                     19.002197   
-Japan          AZURE    japaneast                                        56.343240   
-South America  AZURE    brazilsouth                                      40.689132   
-United Kingdom AZURE    uksouth                                          58.434953   
-West US        AZURE    westus                                           42.819922   
-                        westus2                                          91.311161   
+Australia      AZURE    australiaeast                                    57.619793   
+East US        AZURE    eastus                                           38.973110   
+Germany        AZURE    germanywestcentral                                2.066591   
+India          AZURE    centralindia                                     19.155747   
+Japan          AZURE    japaneast                                        56.612582   
+South America  AZURE    brazilsouth                                      41.387051   
+United Kingdom AZURE    uksouth                                          58.772945   
+West US        AZURE    westus                                           42.607478   
+                        westus2                                          91.625179   
 
                                             Xeon\nPlatinum\n8171M\n@2.60GHz\n(Model 85)  \
 measure group  provider region                                                            
-Australia      AZURE    australiaeast                                         19.677681   
-East US        AZURE    eastus                                                36.188249   
-Germany        AZURE    germanywestcentral                                    35.594200   
+Australia      AZURE    australiaeast                                         20.041830   
+East US        AZURE    eastus                                                36.482031   
+Germany        AZURE    germanywestcentral                                    35.551521   
 India          AZURE    centralindia                                                NaN   
-Japan          AZURE    japaneast                                             15.993986   
-South America  AZURE    brazilsouth                                           28.585588   
-United Kingdom AZURE    uksouth                                                8.998440   
-West US        AZURE    westus                                                40.438682   
-                        westus2                                                4.271867   
+Japan          AZURE    japaneast                                             16.132305   
+South America  AZURE    brazilsouth                                           27.862629   
+United Kingdom AZURE    uksouth                                                9.064234   
+West US        AZURE    westus                                                40.605909   
+                        westus2                                                4.099301   
 
                                             Xeon\nPlatinum\n8272CL\n@2.60GHz\n(Model 85)  
 measure group  provider region                                                            
-Australia      AZURE    australiaeast                                           5.606717  
+Australia      AZURE    australiaeast                                           5.541297  
 East US        AZURE    eastus                                                       NaN  
-Germany        AZURE    germanywestcentral                                     62.250852  
-India          AZURE    centralindia                                           80.674066  
-Japan          AZURE    japaneast                                              27.604950  
-South America  AZURE    brazilsouth                                             3.754664  
-United Kingdom AZURE    uksouth                                                22.406519  
+Germany        AZURE    germanywestcentral                                     62.381888  
+India          AZURE    centralindia                                           80.534278  
+Japan          AZURE    japaneast                                              27.178952  
+South America  AZURE    brazilsouth                                             3.767706  
+United Kingdom AZURE    uksouth                                                22.054240  
 West US        AZURE    westus                                                       NaN  
-                        westus2                                                 3.256138  
+                        westus2                                                 3.134572  

@@ -1,20 +1,20 @@
-                                                  runtime             \
-                                                    count       mean   
-group                                                                  
-['australiaeast', 'eastus', 'westus', 'westus2']  65606.0  72.260647   
-['brazilsouth', 'japaneast', 'uksouth']           51749.0  58.879631   
-['centralindia', 'germanywestcentral']            34607.0  50.515560   
+                                                    runtime             \
+                                                      count       mean   
+group                                                                    
+['australiaeast', 'eastus', 'westus', 'westus2']  6549687.0  72.286951   
+['brazilsouth', 'japaneast', 'uksouth']           5170854.0  58.896956   
+['centralindia', 'germanywestcentral']            3458443.0  50.493069   
 
                                                                                \
                                                         std   min   25%   50%   
 group                                                                           
-['australiaeast', 'eastus', 'westus', 'westus2']  21.371651  39.0  64.0  70.0   
-['brazilsouth', 'japaneast', 'uksouth']           16.629616  27.0  45.0  59.0   
-['centralindia', 'germanywestcentral']            14.838215  26.0  38.0  48.0   
+['australiaeast', 'eastus', 'westus', 'westus2']  20.397499  36.0  64.0  70.0   
+['brazilsouth', 'japaneast', 'uksouth']           16.820030  25.0  45.0  59.0   
+['centralindia', 'germanywestcentral']            16.515252  24.0  38.0  48.0   
 
-                                                                
-                                                   75%     max  
-group                                                           
-['australiaeast', 'eastus', 'westus', 'westus2']  78.0  4066.0  
-['brazilsouth', 'japaneast', 'uksouth']           69.0   262.0  
-['centralindia', 'germanywestcentral']            60.0   230.0  
+                                                                 
+                                                   75%      max  
+group                                                            
+['australiaeast', 'eastus', 'westus', 'westus2']  78.0  11162.0  
+['brazilsouth', 'japaneast', 'uksouth']           69.0   1149.0  
+['centralindia', 'germanywestcentral']            60.0  13352.0  
