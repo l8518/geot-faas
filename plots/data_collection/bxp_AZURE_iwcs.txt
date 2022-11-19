@@ -1,0 +1,14 @@
+     provider         region  workload_invocation   vcs
+21      AZURE  australiaeast                  600  1202
+22      AZURE  australiaeast                  599   132
+23      AZURE  australiaeast                  598    54
+24      AZURE  australiaeast                  596    32
+25      AZURE  australiaeast                  597    16
+...       ...            ...                  ...   ...
+1338    AZURE        westus2                  570     1
+1339    AZURE        westus2                  573     1
+1340    AZURE        westus2                  574     1
+1341    AZURE        westus2                  575     1
+1342    AZURE        westus2                  593     1
+
+[1322 rows x 4 columns]
