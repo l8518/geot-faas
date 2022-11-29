@@ -25,6 +25,7 @@ az deployment group create --name AzureDriverDeployment \
     --template-file azure-driver.json \
     --parameters vmname=$VM_NAME adminUsername=$EXP_NAME adminPublicKey="$PK"
 
-VM_IP=$(az vm list-ip-addresses -n "$VM_NAME-vm" -g $RESOURCE_GROUP --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress | jq -r)
+VM_IP=$(az vm list-ip-addresses -n "$VM_NAME-vm" -g $RESOURCE_GROUP --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 
-ssh $EXP_NAME@$VM_IP -i "vmdriver-${EXP_NAME}.key"
+echo "ssh $EXP_NAME@$VM_IP -i \"vmdriver-${EXP_NAME}.key\""
+echo "keep this command in mind to login again (note: vm keeps running on Azure)"
