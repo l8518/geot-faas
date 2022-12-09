@@ -2,11 +2,11 @@
                               count        mean         std    min    25%   
 provider region                                                             
 AZURE    australiaeast       2884.0  510.127601  146.007746   25.0  481.0   
+         brazilsouth         2880.0  595.042361   33.129472    2.0  600.0   
+         centralindia        2895.0  596.960967   18.012287  234.0  600.0   
          eastus              2871.0  595.101707   38.003440  237.0  599.0   
          germanywestcentral  2897.0  597.252675   19.550676  437.0  600.0   
-         centralindia        2895.0  596.960967   18.012287  234.0  600.0   
          japaneast           2894.0  597.069109   28.268796   53.0  600.0   
-         brazilsouth         2880.0  595.042361   33.129472    2.0  600.0   
          uksouth             2893.0  597.723470   28.115013  315.0  600.0   
          westus              2843.0  580.146324   70.722443    2.0  600.0   
          westus2             2896.0  594.125000   23.113109  138.0  599.0   
@@ -15,11 +15,11 @@ AZURE    australiaeast       2884.0  510.127601  146.007746   25.0  481.0
                                50%    75%     max  
 provider region                                    
 AZURE    australiaeast       595.0  600.0   600.0  
+         brazilsouth         600.0  600.0   600.0  
+         centralindia        600.0  600.0   600.0  
          eastus              600.0  600.0  1200.0  
          germanywestcentral  600.0  600.0  1200.0  
-         centralindia        600.0  600.0   600.0  
          japaneast           600.0  600.0  1200.0  
-         brazilsouth         600.0  600.0   600.0  
          uksouth             600.0  600.0  1200.0  
          westus              600.0  600.0   600.0  
          westus2             600.0  600.0   600.0  

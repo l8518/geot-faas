@@ -1,25 +1,25 @@
                                                  Model 63   Model 79  \
 measure group  provider region                                         
-Australia      GCP      australia-southeast1          NaN  44.288705   
-Canada         GCP      northamerica-northeast1       NaN        NaN   
-East US        GCP      us-east4                      NaN  63.604870   
-Germany        GCP      europe-west3                  NaN  36.124145   
-India          GCP      asia-south1                   NaN        NaN   
 Japan          GCP      asia-northeast1          12.31664  24.192825   
-South America  GCP      southamerica-east1            NaN  52.392529   
+India          GCP      asia-south1                   NaN        NaN   
+Australia      GCP      australia-southeast1          NaN  44.288705   
 United Kingdom GCP      europe-west2                  NaN   2.091200   
+Germany        GCP      europe-west3                  NaN  36.124145   
+Canada         GCP      northamerica-northeast1       NaN        NaN   
+South America  GCP      southamerica-east1            NaN  52.392529   
+East US        GCP      us-east4                      NaN  63.604870   
 West US        GCP      us-west2                      NaN        NaN   
                         us-west4                      NaN        NaN   
 
                                                    Model 85  
 measure group  provider region                               
-Australia      GCP      australia-southeast1      55.711295  
-Canada         GCP      northamerica-northeast1  100.000000  
-East US        GCP      us-east4                  36.395130  
-Germany        GCP      europe-west3              63.875855  
-India          GCP      asia-south1              100.000000  
 Japan          GCP      asia-northeast1           63.490535  
-South America  GCP      southamerica-east1        47.607471  
+India          GCP      asia-south1              100.000000  
+Australia      GCP      australia-southeast1      55.711295  
 United Kingdom GCP      europe-west2              97.908800  
+Germany        GCP      europe-west3              63.875855  
+Canada         GCP      northamerica-northeast1  100.000000  
+South America  GCP      southamerica-east1        47.607471  
+East US        GCP      us-east4                  36.395130  
 West US        GCP      us-west2                 100.000000  
                         us-west4                 100.000000  

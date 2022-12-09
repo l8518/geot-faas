@@ -1,27 +1,27 @@
                                    runtime                                \
                                      count        mean        std    min   
 provider region                                                            
-GCP      australia-southeast1     881507.0  435.199654  32.192091  383.0   
-         northamerica-northeast1  872616.0  464.305939  16.154973  438.0   
-         us-east4                 875937.0  479.939366  28.431815  437.0   
-         europe-west3             877572.0  481.894707  28.461980  441.0   
+GCP      asia-northeast1          883224.0  505.174002  32.888018  445.0   
          asia-south1              872872.0  502.361271  19.932936  454.0   
-         asia-northeast1          883224.0  505.174002  32.888018  445.0   
-         southamerica-east1       888317.0  457.155115  32.298694  415.0   
+         australia-southeast1     881507.0  435.199654  32.192091  383.0   
          europe-west2             872649.0  499.592205  30.354491  457.0   
+         europe-west3             877572.0  481.894707  28.461980  441.0   
+         northamerica-northeast1  872616.0  464.305939  16.154973  438.0   
+         southamerica-east1       888317.0  457.155115  32.298694  415.0   
+         us-east4                 875937.0  479.939366  28.431815  437.0   
          us-west2                 887440.0  501.672008  31.369217  458.0   
          us-west4                 872538.0  471.936208  15.038465  443.0   
 
                                                               
                                     25%    50%    75%    max  
 provider region                                               
-GCP      australia-southeast1     402.0  444.0  464.0  480.0  
-         northamerica-northeast1  452.0  462.0  474.0  506.0  
-         us-east4                 458.0  473.0  496.0  544.0  
-         europe-west3             459.0  474.0  502.0  541.0  
+GCP      asia-northeast1          476.0  512.0  532.0  559.0  
          asia-south1              489.0  504.0  517.0  539.0  
-         asia-northeast1          476.0  512.0  532.0  559.0  
-         southamerica-east1       429.0  446.0  491.0  514.0  
+         australia-southeast1     402.0  444.0  464.0  480.0  
          europe-west2             472.0  492.0  529.0  553.0  
+         europe-west3             459.0  474.0  502.0  541.0  
+         northamerica-northeast1  452.0  462.0  474.0  506.0  
+         southamerica-east1       429.0  446.0  491.0  514.0  
+         us-east4                 458.0  473.0  496.0  544.0  
          us-west2                 474.0  493.0  533.0  556.0  
          us-west4                 461.0  471.0  482.0  507.0  

@@ -1,12 +1,12 @@
-region
-ap-southeast-2    14.903704
-ca-central-1      16.234144
-us-east-1         14.715527
-eu-central-1      14.282047
-ap-south-1        15.594966
-ap-northeast-1    15.985986
-sa-east-1         14.268100
-eu-west-2         14.968355
-us-west-1         16.234640
-us-west-2         15.748412
-Name: runtime, dtype: float64
+                  runtime
+region                   
+ap-northeast-1  15.985986
+ap-south-1      15.594966
+ap-southeast-2  14.903704
+ca-central-1    16.234144
+eu-central-1    14.282047
+eu-west-2       14.968355
+sa-east-1       14.268100
+us-east-1       14.715527
+us-west-1       16.234640
+us-west-2       15.748412

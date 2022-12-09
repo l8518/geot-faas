@@ -1,12 +1,12 @@
-region
-australia-southeast1       16.488610
-northamerica-northeast1    13.975599
-us-east4                   18.507923
-europe-west3               18.003871
-asia-south1                15.420295
-asia-northeast1            26.937972
-southamerica-east1         18.516237
-europe-west2               18.792549
-us-west2                   18.803290
-us-west4                   14.037247
-Name: runtime, dtype: float64
+                           runtime
+region                            
+asia-northeast1          26.937972
+asia-south1              15.420295
+australia-southeast1     16.488610
+europe-west2             18.792549
+europe-west3             18.003871
+northamerica-northeast1  13.975599
+southamerica-east1       18.516237
+us-east4                 18.507923
+us-west2                 18.803290
+us-west4                 14.037247
