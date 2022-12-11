@@ -26,7 +26,7 @@ def plot(name_or_name_components, **kwdata):
         folder = PLOT_FOLDER
     if not os.path.isdir(folder):
         os.makedirs(folder)
-    plt.savefig(os.path.join(folder, f"{name}.pdf"), bbox_inches="tight")
+    plt.savefig(os.path.join(folder, f"{name}.pdf"), bbox_inches='tight', pad_inches=0)
     plt.show()
     plt.close()
     for key in kwdata:
@@ -47,7 +47,7 @@ def savefig(fig, name_or_name_components, **kwdata):
         folder = PLOT_FOLDER
     if not os.path.isdir(folder):
         os.makedirs(folder)
-    fig.savefig(os.path.join(folder, f"{name}.pdf"), bbox_inches="tight")
+    fig.savefig(os.path.join(folder, f"{name}.pdf"), bbox_inches='tight', pad_inches=0)
 
     for key in kwdata:
         data = kwdata[key]

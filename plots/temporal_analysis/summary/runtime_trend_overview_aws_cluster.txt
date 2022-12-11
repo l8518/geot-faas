@@ -1,1 +1,1 @@
-{'Cluster 1': ['eu-west-2', 'sa-east-1'], 'Cluster 2': ['ca-central-1', 'ap-northeast-1', 'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'us-east-1', 'us-west-1', 'us-west-2']}
+{'Cluster 1': ['aws-br', 'aws-uk'], 'Cluster 2': ['aws-au', 'aws-ca', 'aws-de', 'aws-in', 'aws-jp', 'aws-us-e', 'aws-us-w1', 'aws-us-w2']}

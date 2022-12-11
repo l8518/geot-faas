@@ -1,1 +1,1 @@
-{'Cluster 1': ['brazilsouth', 'centralindia', 'germanywestcentral', 'uksouth'], 'Cluster 2': ['australiaeast', 'eastus', 'westus', 'westus2'], 'Cluster 3': ['japaneast']}
+{'Cluster 1': ['azr-br', 'azr-de', 'azr-in', 'azr-uk'], 'Cluster 2': ['azr-au', 'azr-us-e', 'azr-us-w1', 'azr-us-w2'], 'Cluster 3': ['azr-jp']}
